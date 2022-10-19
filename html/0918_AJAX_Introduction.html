@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>0918 Introduction</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="AJAX">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0918 Introduction</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Introduction</h4>
+                        <ol>
+                            <li>AJAX = Asynchronous JavaScript And XML.</li>
+                            <li>AJAX is <b>not</b> a programming language.
+                                AJAX just uses a combination of:
+                                A browser built-in <span class="red">XMLHttpRequest object</span>
+                                (to request data from a web server)
+                                <span class="red">JavaScript</span> and
+                                <span class="red">HTML DOM </span>(to display or use the data)
+                            </li>
+                            <li>Application
+                                <ul>
+                                    <li>Update a web page without reloading the page</li>
+                                    <li>Request data from a server - after the page has loaded</li>
+                                    <li>Receive data from a server - after the page has loaded</li>
+                                    <li>Send data to a server - in the background</li>
+                                    <li>According to <b>Event</b> update UI without reloading</li>
+                                    <li>鼠标移入显示菜单，用则加载，不用就不会加载</li>
+                                    <li>快滚动到底部时添加新的内容</li>
+                                    <li>图形交互界面</li>
+                                </ul>
+                            </li>
+                            <li>Working flow <br>
+                                <img src="../src/img/ajax.gif" alt="Ajax">
+                            </li>
+                            <li>
+                                For security reasons, modern browsers do not allow <span class="red">access across domains</span>.
+                                This means that both the web page and the XML file it tries to load, must be located on
+                                the same server.
+                            </li>
+                            <li>
+                                Across domin strategy
+                                <ul>
+                                    <li>Same-origin Policy: 网页url和ajax请求的url必须协议、域名、端口一致</li>
+                                    <li>解决方案1: jsonp：使用script标签作为跨域的媒介，服务器端返回的数据为js代码</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>XML</h4>
+                        <ol>
+                            <li>XML stands for eXtensible Markup Language</li>
+                            <li>Use for data storage and exchange</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

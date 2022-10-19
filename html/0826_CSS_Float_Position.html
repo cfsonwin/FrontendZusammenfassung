@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <style>
+        .ep1{
+            width: 50px;
+            height: 50px;
+            float: left;
+            border: 2px #60d492 solid;
+            background-color: rgb(203, 66, 66);
+        }
+        .ep2{
+            box-sizing: border-box;
+            border: #bfa 5px solid;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(110, 47, 193);
+            position: relative;
+        }
+        .ep3{
+            float: left;
+            background-color: rgb(52, 50, 160);
+        }
+        .ep4{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(47, 193, 110);
+            position: absolute;
+        }
+    </style>
+    <title>0826 浮动 Position</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="CSS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0826 浮动 Position</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Float</h4>
+                        <ol>
+                            <li>使元素向左或向右移动</li>
+                            <li>value=none / left / right</li>
+                            <li>元素使用float后便不需要满足水平布局的等式</li>
+                            <li>使用float后会从文档流中脱离，不占位置</li>
+                            <li>浮动元素不会覆盖其他元素，形成水平布局，一行容纳不下就会自动换行</li>
+                            <li>浮动元素不会覆盖文字，文字自动环绕</li>
+                            <li>从文档流中脱离后，块儿元素不独占一行高度宽度默认被内容撑开，inline可以设置宽高</li>
+                        </ol>
+                        <div class="ex2">
+                            <div>
+                                3/4水平并列，2的位置不会因为1移动，div和span不设置宽高时都会包裹元素
+                            </div>
+                            <div class="ep1">1</div>
+                            <div class="ep2">2</div>
+                            <div class="ep1">3</div>
+                            <div class="ep1">4</div>
+                            <div class="ep3">div</div>
+                            <span class="ep3">span</span>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Clear：清除浮动元素对当前元素的影响</h4>
+                        <ol>
+                            <li>clear：left / right / both</li>
+                            <li>下例将清除向左的浮动。表示在（div 的）左侧不允许出现浮动元素：</li>
+                        </ol>
+                        <div class="ex2">
+                            <div>2 clear:both; 后会在1的下方</div>
+                            <div class="ep1">1</div>
+                            <div class="ep2" style="clear: both;">2</div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Float问题：高度塌陷</h4>
+                        <p>如果父元素没有设置高度，且子元素设置float，因为其不在文档流之中，父元素高度不能被撑开</p>
+                        <ol>解决办法：
+                            <li>开启BFC（block formatting context）开启方法：
+                                <br>I.设置父元素为float
+                                <br>II.设置为inline-block
+                                <br>III.设置overflow为非visible
+                            </li>
+                            <li>
+                                设置css样式，::after{content:"";clear:both;display:block;}
+                            </li>
+                            <li>
+                                同理对于外边距重合问题，可以添加<br>
+                                ::before, ::after{content:""; display:table; clear:both}
+                            </li>
+                        </ol>
+                        <div class="ex2">
+                            <div style="border: rgb(209, 142, 142) 3px solid;">
+                                <div class="ep1"></div>
+                            </div>
+                            <div style="border: rgb(183, 209, 142) 3px solid; display: inline-block;">
+                                <div class="ep1"></div>
+                            </div>
+                            <div style="border: rgb(142, 209, 167) 3px solid; overflow: auto;">
+                                <div class="ep1"></div>
+                            </div>
+                            <div class="clearfix" style="border: rgb(142, 145, 209) 3px solid;">
+                                <div class="ep1"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Position [top left bottom right]</h4>
+                        <ol>
+                            <li>
+                                relativ: 原点相对于其在文档流中的位置，不会脱离文档流，不改变inline/block属性
+                            </li>
+                            <li>
+                                absolute：相对于containing box（最近的开启定位的祖先元素）定位
+                                <br>一般会给绝对定位的父元素开启相对定位
+                                <br>元素位置不变
+                                <br>脱离文档流：宽度被内容撑开，不占位置
+                            </li>
+                            <li>
+                                fixed：类似于absolute，位置相对于viewpoint
+                            </li>
+                            <li>
+                                sticky：兼容性不好，类似于相对定位，在页面滚动时当元素到达一个位置后就会停止移动
+                            </li>
+                        </ol>
+                        <div class="ex2">
+                            开启绝对定位后，水平布局等式加上left和right
+                            <div class="ep2">
+                                <div class="ep4"></div>
+                            </div>
+                            <div class="ep2">
+                                <div class="ep4" style="width: auto;">width auto</div>
+                            </div>
+                            <div class="ep2">
+                                <div class="ep4" style="margin: auto;">margin:auto</div>
+                            </div>
+                            <div class="ep2">
+                                <div class="ep4" style="margin: auto;left: 0;right: 0;">margin:auto left/right:0;</div>
+                            </div>
+                            <div class="ep2">
+                                <div class="ep4" style="margin: auto;left: 0;right: 0; top: 0;bottom: 0;">margin:auto left/right/bottom/top:0;</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>元素层级</h4>
+                        <ol>
+                            <li>绝对定位会提升层级</li>
+                            <li>对开启了定位的元素，可以通过设置z-index一个整数参数，越大越在上面</li>
+                            <li>祖先元素层级再高也不会盖住后代元素</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>

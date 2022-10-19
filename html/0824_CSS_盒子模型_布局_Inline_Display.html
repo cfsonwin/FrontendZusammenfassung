@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <style>
+        #ex1>p {
+            color: blue;
+        }
+
+        #ex2:hover {
+            background-color: green;
+            ;
+        }
+
+        #ex2 p {
+            color: rgb(49, 155, 132);
+        }
+
+        #ex2+div {
+            color: rgb(184, 149, 149);
+        }
+
+        #ex4~div {
+            background-color: rgb(112, 102, 240);
+            color: #fff;
+        }
+
+        #div2>p::after {
+            content: "]";
+        }
+
+        #div2>p::first-letter {
+            color: #fc7adb;
+            font-size: 50px;
+        }
+
+        #div2 li:last-child {
+            color: rgb(228, 219, 99);
+        }
+
+        #div2>p:first-child {
+            color: rgb(37, 126, 99);
+        }
+
+        #div2 ul>li:first-of-type {
+            background-color: rgb(0, 255, 76);
+        }
+
+        #div2 li:nth-of-type(even) {
+            color: rgb(30, 106, 206);
+        }
+
+        #div2 ::selection {
+            color: rgb(250, 250, 250);
+            background-color: rgb(34, 199, 117);
+        }
+    </style>
+    <title>0822 Introduction Selectors</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="CSS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0822 Introduction Selectors</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>
+                            border
+                        </h4>
+                        <ol>
+                            <li>width: 1-4值，上右下左</li>
+                            <li>color: 1-4值，上右下左</li>
+                            <li>style： solid dotted dashed double</li>
+                            <li>border会影响可见区大小，outline既不影响可见区大小，也不影响页面布局</li>
+                            <li>box-shadow设置阴影，四个参数：水平偏移量 垂直偏移量 模糊半径 颜色</li>
+                            <li>border-radius设置圆角</li>
+                        </ol>
+                        <div class="ex" style="display: block;">
+                            <div id="example1">例如：border: 2px red solid;</div>
+                            <div id="example2">例如：border-width: 2px 4px 6px 8px;
+                                border-style: solid;
+                                border-color: aliceblue rebeccapurple darkblue firebrick;</div>
+                            <div id="example2-1">加个圆角</div>
+                            <div id="example2-2">使用outline</div>
+                            <div id="example2-3">加个阴影</div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>
+                            padding
+                        </h4>
+                        <ol>
+                            <li>width和height只是内容区的大小，不包括padding border和margin</li>
+                            <li>背景颜色会延伸到padding区</li>
+                            <li>子元素设置100%只会铺满内容区</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>
+                            margin
+                        </h4>
+                        <ol>
+                            <li>同样四个方向，影响box的位置</li>
+                            <li>上左margin会影响自身位置，下右margin影响其他元素</li>
+                            <li>可以为负值</li>
+                            <li>外边距折叠：垂直方向外边距会重叠
+                                <ul>
+                                    <li>兄弟元素之间都为正值取大值一正一负取和，两个负值取绝对值大的</li>
+                                    <li>父子元素之间，相邻外边距子元素会传递给父元素</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="ex2" style="font-size: 10px;">
+                            父元素没有设置margin，也会和子元素一起向下移
+                            <div style="background-color: rgb(121, 103, 103); height:80px; width:80px;">
+                                <div style="background-color: rgb(211, 78, 78); height:40px; width:40px; margin-top: 20px;">
+                                </div>
+                            </div>
+                            第一个margin-bottom：20 第二个margin-top：-10，最后间距为10px
+                            <div style="background-color: rgb(117, 113, 159); height:80px; width:80px;">
+                                <div
+                                    style="background-color: rgb(211, 78, 78); height:40px; width:40px; margin-bottom: 20px;">
+                                </div>
+                                <div
+                                    style="background-color: rgb(211, 78, 78); height:40px; width:40px; margin-top: -10px;">
+                                </div>
+                            </div>
+                            第一个margin-bottom：-20 第二个margin-top：-10，最后间距为-20px
+                            <div style="background-color: rgb(144, 159, 113); height:80px; width:80px;">
+                                <div
+                                    style="background-color: rgb(53, 160, 105); height:40px; width:40px; margin-bottom: -20px;">
+                                </div>
+                                <div
+                                    style="background-color: rgb(211, 78, 175); height:40px; width:40px; margin-top: -10px;">
+                                </div>
+                            </div>
+                            父元素使用clearfix，子元素外边距不会传递给父元素了
+                            <div class="clearfix" style="background-color: rgb(123, 113, 159); height:80px; width:80px;">
+                                <div
+                                    style="background-color: rgb(33, 156, 80); height:40px; width:40px; margin-top: 10px;">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>
+                            水平布局
+                        </h4>
+                        <ol>
+                            <li>marLeft+borLeft+padLeft+width+padRight+borRight+marRight = 父元素内容去宽度</li>
+                            <li>margin-right默认为auto自动调整大小</li>
+                            <li>margin-left和width也可以设置为auto</li>
+                            <li>水平居中：设置width固定值并margin：0 auto；</li>
+                        </ol>
+                        <ol>补充
+                            <li>文本居中：text-align: center;</li>
+                            <li>居中图像，将左右外边距设置为 auto，并将其设置为块元素</li>
+                            <li>左右对齐：position: absolute;right: 0px; / float: right;</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>
+                            垂直布局
+                        </h4>
+                        <ol>
+                            <li>默认父元素高度被内容撑开</li>
+                            <li>如果父元素设置了height子元素超出则会直接溢出，可用overflow解决</li>
+                            <li>overflow：wisible默认；hidden隐藏超出部分；scroll添加滚动条；auto自动</li>
+                        </ol>
+                        <ol>补充
+                            <li>如果一个元素比包含它的元素高，并且它是浮动的，它将溢出其容器。可以使用overflow: auto;</li>
+                            <li>单行文本垂直对齐：设置inline-height=height / 使用 position 和 transform 属性position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>
+                            inline的box model
+                        </h4>
+                        <ol>
+                            <li>无法设置height和width改变大小</li>
+                            <li>可以设置margin/border/padding，但不会影响垂直布局</li>
+                            <li>水平方向的margin不会折叠</li>
+                        </ol>
+                        <div class="ex" style="font-size: 15px; display: block; ">
+                            <span id="example3">设置了内外边距的行内元素</span>
+                            <span id="example4">设置了内外边距的行内元素2</span>
+                            <div id="example5"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>
+                            display
+                        </h4>
+                        <ol>
+                            <li>inline:设置为行内元素</li>
+                            <li>block：设置为块元素</li>
+                            <li>inline-block：与 display: inline 相比，允许在元素上设置宽度和高度，并保留上下外边距/内边距。<br>
+                                与display: block相比，inline-block在元素之后不添加换行符</li>
+                            <li>table：表格</li>
+                            <li>none：不在页面中显示，区别于visibility：hidden，不保留位置</li>
+                        </ol>
+                        <div class="ex" style="font-size: 15px; display: block; overflow-y: auto;">
+                            <h2>display: inline</h2>
+                            <div>Shanghai is one of the four direct-administered municipalities of <span class="a">the
+                                    People's Republic of China</span>. Welcome to <span class="a">Shanghai</span>!</div>
+                            <h2>display: inline-block</h2>
+                            <div>Shanghai is one of the four direct-administered municipalities of <span class="b">the
+                                    People's Republic of China</span>. Welcome to <span class="b">Shanghai</span>!</div>
+                            <h2>display: block</h2>
+                            <div>Shanghai is one of the four direct-administered municipalities of <span class="c">the
+                                    People's Republic of China</span>. Welcome to <span class="c">Shanghai</span>!</div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>其他</h4>
+                        <ol>
+                            <li>清除list样式：list-style：none；</li>
+                            <li>去掉a的下划线：text-decoration：none</li>
+                            <li>设置box-sizing：border-box后，高度宽度为可见区大小</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>

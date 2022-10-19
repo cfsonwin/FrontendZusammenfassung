@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <style>
+        .itemOnClick,
+        .itemOnClick2 {
+            width: 50px;
+            height: 30px;
+            border: 1px solid black;
+            float: right;
+            margin-right: 20px;
+        }
+    </style>
+    <title>0913 ES</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="ES">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0913 ES Introduction Let</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Introduction</h4>
+                        <ol>
+                            <li>ECMAScript 2015 was the second major revision to JavaScript. ECMAScript 2015 is also
+                                known as ES6 and ECMAScript 6. </li>
+                            <img src="../src/img/ECMASupportedBrowsers.png" alt="ECMASupportedBrowsers">
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Let</h4>
+                        <ol>
+                            <li>To declare a variable</li>
+                            <li>Variables defined with "let" <span class="red">cannot be Redeclared</span> (but var can
+                                be redeclared).</li>
+                            <li>Variables defined with "let" must be <span class="red">Declared before use</span>. Using
+                                a let variable
+                                before it is declared will result in a ReferenceError. </li>
+                            <li>Variables defined with "var" are <span class="red">hoisted</span> to the top and can be
+                                initialized at any time.
+                                Meaning: You can use the variable before it is declared.</li>
+                            <li>Variables defined with "let" have <span class="red">Block Scope</span>. Variables
+                                declared inside a { }
+                                block cannot be accessed from outside the block.
+                                Before ES6 (2015), JavaScript had only Global Scope and Function Scope.
+                                Variables declared with the "var" keyword can NOT have block scope.</li>
+                            <li>Block Scope for example after if, else, while Loop and so on</li>
+                        </ol>
+                        <div class="ex">
+                            let x = "John Doe"; <br>
+                            let x = 0; <br>
+                            // <span class="red"> ERROR</span>-> SyntaxError: 'x' has already been declared <br>
+
+                            {<br>
+                            let x = 2;<br>
+                            }<br>
+                            // x can NOT be used here <br>
+                            <div class="clearfix">
+                                练习1：
+                                <div class="itemOnClick"></div>
+                                <div class="itemOnClick"></div>
+                                <div class="itemOnClick"></div>
+                            </div>
+                            <div class="clearfix">
+                                练习2：
+                                <div class="itemOnClick2"></div>
+                                <div class="itemOnClick2"></div>
+                                <div class="itemOnClick2"></div>
+                            </div>
+                            说明：let定义的循环参数"i"只在每个循环块儿中声明，相当于给每一个item绑定响应函数，
+                            然而var定义的"i"在全局作用域，不用this的话相当于给i=3时绑定响应函数。
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Const</h4>
+                        <ol>
+                            <li>To declare a constant variable,and must be <span class="red">assigned a value</span>
+                                when they are declared </li>
+                            <li>It does not define a constant value. It defines a constant reference to a value.</li>
+                            <li>Elements of constant array and properties of constant object can be changed</li>
+                            <li>Variables defined with "const" cannot be Redeclared.</li>
+                            <li>Variables defined with "const" cannot be Reassigned.</li>
+                            <li>Variables defined with "const" have Block Scope.</li>
+                            <li>Variables defined with "const" are also hoisted to the top, but not initialized (like
+                                var).</li>
+                        </ol>
+                        <div class="ex">
+                            const PI = 3.141592653589793; <br>
+                            PI = 3.14; // <span class="red"> ERROR</span> <br>
+                            PI = PI + 10; // <span class="red"> ERROR</span> <br><br>
+
+                            // You can create a constant array:<br>
+                            const cars = ["Saab", "Volvo", "BMW"];<br>
+                            // You can change an element:<br>
+                            cars[0] = "Toyota";<br>
+                            // You can add an element:<br>
+                            cars.push("Audi");<br>
+                            const cars = ["Saab", "Volvo", "BMW"];<br>
+                            cars = ["Toyota", "Volvo", "Audi"]; // <span class="red"> ERROR</span><br><br>
+
+                            // You can create a const object:<br>
+                            const car = {type:"Fiat", model:"500", color:"white"};<br>
+                            // You can change a property:<br>
+                            car.color = "red";<br>
+                            // You can add a property:<br>
+                            car.owner = "Johnson";<br>
+                            const car = {type:"Fiat", model:"500", color:"white"};<br>
+                            car = {type:"Volvo", model:"EX60", color:"red"}; // <span class="red"> ERROR</span><br><br>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>backticks: </h4>
+                    </li>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        itemOnClick = document.getElementsByClassName("itemOnClick");
+        itemOnClick2 = document.getElementsByClassName("itemOnClick2");
+        for (var i = 0; i < itemOnClick.length; i++) {
+            itemOnClick[i].onclick = function () {
+                this.style.background = "pink";
+            }
+        }
+        for (let j = 0; j < itemOnClick2.length; j++) {
+            itemOnClick2[j].onclick = function () {
+                itemOnClick2[j].style.background = "pink";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <link rel="stylesheet" href="../css/0821.css">
+    <script src="../js/template.js"></script>
+    <title>0821 HTML元素</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+        
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+    
+        
+    </header>
+    
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="HTML">
+                <a href="#intro">基本元素</a>
+                <a href="#tags">Tags</a>
+                <a href="#entity">Entity</a>
+                <a href="#block">Block & Inline Element</a>
+                <a href="#list">List</a>
+                <a href="#hyperlink">Hyperlink</a>
+                <a href="#image">Image</a>
+                <a href="#iframe">Iframe</a>
+                <a href="#media">Media</a>
+                <a href="#footer">Table & Form</a>
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0821 HTML元素</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i> 
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li id="intro">
+                        <h4>文档元素</h4>
+                        <ol>
+                            <li>多个空格会被解析为一个空格</li>
+                            <li>使用html的 <a href="#entity">entities</a> 表示特殊符号, 空格&nbsp;大于号&gt;</li>
+                            <li>meta标签: charset;  name指定数据名称 content指定数据内容: 有keywords、description、</li>
+                        </ol>
+                        <div class="ex">
+                            <p>&lt;!Doctype html lang='en'&gt; //文档声明, 使用HTML5版本的文件</p>
+                            <p>&lt;html&gt; //根标签</p>
+                            <p style="margin-left:20px;">&#9;&lt;head&gt;</p>
+                            <p style="margin-left:40px;">&lt;meta charset='utf-8'&gt; //设置元数据: 指明字符集</p>
+                            <p style="margin-left:40px;">&lt;meta name='keywords' content='html学习'&gt; //指明用于搜索的关键字</p>
+                            <p style="margin-left:40px;">&lt;title&gt;网页标题&lt;/title&gt;</p>
+                            <p style="margin-left:20px;">&lt;/head&gt;</p>
+                            <p style="margin-left:20px;">&lt;body&gt;</p>
+                            <p style="margin-left:20px;">&lt;/body&gt;</p>
+                            <p>&lt;/html&gt;</p>
+                        </div>
+                    </li>
+                    <li id="tags">
+                        <h4>标签</h4>
+                        <ol>
+                            <li>标题: h1~h6,一般用1-3.是一个块儿元素[block element],独占一行。
+                                &lt;hgroup&gt;&lt;/hgroup&gt;标题组</li>
+                            <li>段落: p。也是块儿元素</li>
+                            <li>加重: em、strong。inline标签。行内元素或者内联元素</li>
+                            <li>引用: blockquote--块儿元素; q--行内元素</li>
+                            <li>换行: br; 分割线: hr</li>
+                            <li>其他块儿元素: header/main/footer; 导航 nav; 主体相关内容: aside; 文章 article; 独立的区块 section</li>
+                            <li>最常用: div; 对应的行内元素span</li>
+                        </ol>
+                    </li>
+                    <li id="entity">
+                        <!-- Entity -->
+                        <h4>Entity [escape character]</h4>
+                        <table class="dataintable">
+                            <tbody><tr>
+                            <th style="width:20%">显示结果</th>
+                            <th style="width:20%">描述</th>
+                            <th style="width:30%">实体名称</th>
+                            <th style="width:30%">实体编号</th>
+                            </tr>
+                        
+                            <tr>
+                            <td>&nbsp;</td>
+                            <td>空格</td>
+                            <td>&amp; nbsp;</td>
+                            <td>&amp; #160;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>&lt;</td>
+                            <td>小于号</td>
+                            <td>&amp;  lt;</td>
+                            <td>&amp;  #60;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>&gt;</td>
+                            <td>大于号</td>
+                            <td>&amp; gt;</td>
+                            <td>&amp; #62;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>&amp; </td>
+                            <td>和号</td>
+                            <td>&amp; amp;</td>
+                            <td>&amp; #38;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>"</td>
+                            <td>引号</td>
+                            <td>&amp; quot;</td>
+                            <td>&amp; #34;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>'</td>
+                            <td>撇号&nbsp;</td>
+                            <td>&amp; apos; (IE不支持)</td>
+                            <td>&amp; #39;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>￠</td>
+                            <td>分（cent）</td>
+                            <td>&amp; cent;</td>
+                            <td>&amp; #162;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>£</td>
+                            <td>镑（pound）</td>
+                            <td>&amp; pound;</td>
+                            <td>&amp; #163;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>¥</td>
+                            <td>元（yen）</td>
+                            <td>&amp; yen;</td>
+                            <td>&amp; #165;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>€</td>
+                            <td>欧元（euro）</td>
+                            <td>&amp; euro;</td>
+                            <td>&amp; #8364;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>§</td>
+                            <td>小节</td>
+                            <td>&amp; sect;</td>
+                            <td>&amp; #167;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>©</td>
+                            <td>版权（copyright）</td>
+                            <td>&amp; copy;</td>
+                            <td>&amp; #169;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>®</td>
+                            <td>注册商标</td>
+                            <td>&amp; reg;</td>
+                            <td>&amp; #174;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>™</td>
+                            <td>商标</td>
+                            <td>&amp; trade;</td>
+                            <td>&amp; #8482;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>×</td>
+                            <td>乘号</td>
+                            <td>&amp; times;</td>
+                            <td>&amp; #215;</td>
+                            </tr>
+                        
+                            <tr>
+                            <td>÷</td>
+                            <td>除号</td>
+                            <td>&amp; divide;</td>
+                            <td>&amp; #247;</td>
+                            </tr>
+                        </tbody></table>
+                    </li>
+                    <li id="block">
+                        <h4>Block element and inline element</h4>
+                        <ol>
+                            <li>一般来说块元素用来布局, 行内元素用来展示文字</li>
+                            <li>块儿元素什么都可以放, p元素内不可以放块儿元素</li>
+                            <li>布局标签: 显示效果一样, 需要额外加css
+                                <ul>
+                                    <li>header 网页的头部</li>
+                                    <li>main 主体部分</li>
+                                    <li>footer 网页的底部</li>
+                                    <li>nav 网页中的导航</li>
+                                    <li>aside 侧边栏</li>
+                                    <li>article 表现为独立的文章</li>
+                                    <li>section 表示一个独立的区块儿, 主要用div</li>
+                                    <li>行内标签使用span</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li id="list">
+                        <h4>List</h4>
+                        <ol>
+                            <li>ordered list; unordered list; description list.</li>
+                            <li>li: list item</li>
+                            <li>第一列表dl, 使用dt表示定义内容, dd进行解释说明</li>
+                        </ol>
+                    </li>
+                    <li id="hyperlink">
+                        <h4>超链接a标签</h4>
+                        <ol>
+                            <li><span class="red">行内标签</span>, 可以放块儿元素, 可以用br换行</li>
+                            <li>使用href属性指明跳转链接</li>
+                            <li>使用target指定超链接打开位置, _self或者_blank, 是否新建标签打开标签,在内联框架中打开需要使用iframe的name属性</li>
+                            <li>跳转到页面的其他位置: 
+                                <ul>
+                                    <li>回到顶部: <a href="#">Top</a></li>
+                                    <li>回到底部: <a href="#footer">Bottom</a></li>
+                                    <li>去Entity部分笔记: <a href="#entity">Go Entity</a></li>
+                                </ul>
+                            </li>
+                            <li>开发中井号#可以用作占位符</li>
+                            <li>使用javascript:;也可以用作占位符</li>
+                        </ol>
+                    </li>
+                    <li id="image">
+                        <h4>图像标签</h4>
+                        <ol>
+                            <li>使用img标签, 是自结束标签</li>
+                            <li>src属性添加路径</li>
+                            <li>alt属性会在图片不能加载的时候替换图片, 也是搜索引擎的关键字</li>
+                            <li>width heigth限制长宽, 如果只修改一个另一个会等比例缩小</li>
+                            <li><span class="red">替换元素</span>, 不独占一行, 既有行内元素也有行内元素的性质</li>
+                            <li>jpg格式显示照片, 不支持透明; png支持复杂透明; gif支持动图以及透明</li>
+                            <li>webp是谷歌搞的格式, 小且功能强大, 兼容性不好</li>
+                            <li>将图片使用base64进行编码, 将图片转换为字符</li>
+                        </ol>
+                    </li>
+                    <li id="iframe">
+                        <h4>内联框架iframe</h4>
+                        <div style="height:200px; width: 100%; border:1px solid black; margin-top: 15px;">
+                            <iframe src="./iframe1.html" frameborder="0" name="iframe1" style="width: 100%; height: 100%;"></iframe>
+                        </div>
+                    </li>
+                    <li id="media">
+                        <h4>音频视频文件</h4>
+                        <ol>
+                            <li>audio是音频标签, src属性确定源</li>
+                            <li>实际使用中会自己写css、js确定样式和功能</li>
+                            <li>其他属性
+                                <ul>
+                                    <li>controls: 属性添加控制界面</li>
+                                    <li>autoplay: 设置是否自动播放, 但是大部分网页不支持</li>
+                                    <li>loop: 是否循环播放</li>
+                                </ul>
+                            </li>
+                            <li>video标签引入视频文件, 使用方式和audio差不多</li>
+                        </ol>
+                        <audio src="../src/sound/Jam七月上.mp3" style="margin-top:10px;" controls></audio>
+                        <br>
+                        <video src="../src/video/Test_Video.mp4" width="80%" controls></video>
+                    </li>
+                    <li id="footer">
+                        <h4>Table</h4>
+                        <a style="margin-left: 10px" href="./0901_CSS_渐变表格_表单.html">
+                            <i class="fa-solid fa-hand-point-right"></i>
+                            Jump to
+                        </a>
+                    </li>
+                    <li>
+                        <h4>Form</h4>
+                        <a style="margin-left: 10px" href="./0901_CSS_渐变表格_表单.html">
+                            <i class="fa-solid fa-hand-point-right"></i>
+                            Jump to
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

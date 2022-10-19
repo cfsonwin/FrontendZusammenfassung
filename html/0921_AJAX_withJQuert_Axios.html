@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>0921 IE 网络超时&异常 重复请求</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="AJAX">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0921 IE 网络超时&异常 重复请求</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>jQuery</h4>
+                        <ol>
+                            <li>在请求的url后加上时间戳: 'http://...?t=' + Date.now()</li>
+                            <li>相当于请求的不是同一个地址</li>
+                            <li>
+                                <button>GET</button>
+                                <button>POST</button>
+                            </li>
+                        </ol>
+                        <div class="ex"></div>
+                    </li>
+                    <li>
+                        <h4>$.ajax()方法</h4>
+                        <ol>
+                            <li>jquery中的ajax对象</li>
+                            <li> $.ajax({url: "...", <br>
+                                data: {xx:...}, <br>
+                                type: "GET/POST",<br>
+                                dataType: "json", //可选项<br>
+                                success: function(data){...}<br>
+                                timeout: 2000,
+                                error: function(){...},<br>
+                                headers: {xx:...}<br>
+                                })
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Axios</h4>
+                        <ol>
+                            <li id="axios">
+                                <button>GET</button>
+                                <button>POST</button>
+                            </li>
+                            <li>axios.get(url[, config])</li>
+                            <li>axios.post(url, data[, config])</li>
+                            <li>返回 <a href="https://www.runoob.com/w3cnote/javascript-promise-object.html">promise对象</a>,
+                                .then(onFulfilled).catch(onRejected)
+                            </li>
+                        </ol>
+                        <div class="ex"></div>
+                    </li>
+                    <li>
+                        <h4>fetch</h4>
+                        <ol>
+                            <li>fetch(url, {method:..., headers:..., body:...}).then()</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // const { JSDOM } = require( "jsdom" );
+        // const { window } = new JSDOM( "" );
+        // const $ = require( "jquery" )( window );
+        $('button').eq(1).click(
+            function(){
+                // url, params, func(), dataType
+                $.get("http://127.0.0.1:8000/server-json", {a:100}, function(data){
+                    var dex = document.getElementsByClassName("ex")[0];
+                    dex.innerHTML = data;
+                }, "json")
+                
+            }
+        )
+        $('button').eq(2).click(
+            function(){
+                $.post("http://127.0.0.1:8000/server", {a:100}, function(data){
+                    var dex = document.getElementsByClassName("ex")[0];
+                    dex.innerHTML = data;
+                }, )
+                
+            }
+        )
+        var btn = document.getElementById("axios").getElementsByTagName("button");
+        //base url
+        axios.defaults.baseURL = "http://127.0.0.1:8000"
+        btn[0].onclick = function(){
+            axios.get("/server-json", {
+                //url parameter
+                params: {id:100},
+                //Header
+                headers: {theader: "aaa"}
+            }).then(value=>{
+                console.log(value)
+            });
+        }
+        btn[1].onclick = function(){
+            axios.post("/server-json", {data: 100},{
+                //url parameter
+                params: {id:100},
+                //Header
+                headers: {theader: "aaa"}
+            }).then(value=>{
+                console.log(value)
+            });
+        }
+    </script>
+</body>
+
+</html>

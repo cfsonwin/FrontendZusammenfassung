@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>0807 Node 事件 查询</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+        
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+    
+        
+    </header>
+    
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0807 Node 事件 查询</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i> 
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>节点Node</h4>
+                        <ol>
+                            <li>文档节点：整个HTML文档，document,nodeType=9，value=null</li>
+                            <li>元素节点：标签，标签名，nodeType=1，value=null</li>
+                            <li>属性节点：元素属性，属性名，nodeType=2，value=属性值</li>
+                            <li>文本节点：标签中的文本内容，text，nodeType=3，value=文本内容</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>事件：</h4>
+                        <ol>
+                            <li>用户和浏览器的交互：点击按钮，鼠标移动，关闭窗口等。</li>
+                            <li>属性：.onclick .onmousemove .ondblclick</li>
+                            <li>在文档开头的js，要使用window.onload = function(){...};</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>查询：</h4>
+                        <ol>
+                            <li>获取元素节点
+                                <ul>
+                                    <li>.getElementById()</li>
+                                    <li>.getElementsByTagName()</li>
+                                    <li>.getElementsByName()</li>
+                                </ul>
+                            </li>
+                            <li>获取元素节点的子节点
+                                <ul>
+                                    <li>.getElementsByTagName()</li>
+                                    <li>.childNodes</li>
+                                    <li>.firstChild</li>
+                                    <li>.lastChild</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>

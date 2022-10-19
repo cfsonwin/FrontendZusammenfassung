@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <title>0918 总复习</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0918 总复习</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Data Types</h4>
+                        <ol>
+                            <li>
+                                primitive data types
+                                <ul>
+                                    <li>number string boolean</li>
+                                    <li>undefined null:undefined and null are equal in value but different in type:</li>
+                                    <li>symbol
+                                        bigint
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Object
+                                <ul>
+                                    <li>Objects are mutable:
+                                        They are <span class="red">addressed by reference</span>,
+                                        not by value.
+                                    </li>
+                                    <li>Create new objects:
+                                        <ul>
+                                            <li>Object Literal:
+                                                const person = {firstName:"John", lastName:"Doe", age:50,
+                                                eyeColor:"blue"};
+                                            </li>
+                                            <li>
+                                                JavaScript Keyword new:
+                                                const person = new Object();
+                                            </li>
+                                            <li>
+                                                Create an object using Object.create().
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>In JavaScript, almost "everything" is an object.
+                                        Booleans can be objects (if defined with the new keyword)
+                                    </li>
+                                    <li>Properties:
+                                        Properties are the values associated with a JavaScript object.
+                                        Accessing JavaScript Properties: <br>
+                                        objectName.property // person.age<br>
+                                        objectName["property"] // person["age"]<br>
+                                        <span class="red">objectName[expression] // x = "age"; person[x]</span>
+                                    </li>
+                                    <li>Methods:
+                                        actions that can be performed on objects. <br>
+                                        Built-In Methods:
+                                    </li>
+                                    <li>Display Objects:
+                                        <ol>
+                                            <li>Using a Loop: for (let x in person) {
+                                                txt += person[x] + " ";
+                                                };
+                                            </li>
+                                            <li>Object.values():
+                                                all values converted to an array
+                                            </li>
+                                            <li>
+                                                JSON.stringify():
+                                                converts dates into strings;
+                                                but will not stringify functions.
+                                                It is also possible to stringify JavaScript arrays.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li>Object Accessors <br>
+                                        Getters
+                                        <ol>
+                                            <li>get fullName() {
+                                                return this.firstName + " " + this.lastName;
+                                                }</li>
+                                            <li>access as a property: person.fullName.</li>
+                                        </ol>
+                                        Setters
+                                        <ol>
+                                            <li>set lang(lang) {
+                                                this.language = lang.toUpperCase();
+                                                }
+                                            </li>
+                                            <li>
+                                                Set an object property: person.lang = "en";
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>The typeof Operator
+                                <ul>
+                                    <li>typeof operator always returns a string</li>
+                                    <li>return value:
+                                        string
+                                        number
+                                        boolean
+                                        undefined
+                                        function
+                                        object
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>The constructor Property:The constructor property returns
+                                the constructor function for all JavaScript variables.</li>
+                            <li>Check the constructor property to find out the type of an object:
+                                <br>for example: myArray.constructor.toString().indexOf("Array") > -1;
+                            </li>
+                        </ol>
+                        <div class="ex" id="log01">
+                            typeof "John" // Returns "string" <br>
+                            typeof 3.14 // Returns "number"<br>
+                            typeof NaN // Returns "number" <br>
+                            typeof myCar // Returns "undefined"<br>
+                            typeof false // Returns "boolean"<br>
+                            typeof [1,2,3,4] // Returns "object"<br>
+                            typeof {name:'John', age:34} // Returns "object"<br>
+                            typeof new Date() // Returns "object"<br>
+                            typeof function () {} // Returns "function"<br>
+                            typeof null // <span class="red"> Returns "object"</span><br>
+                            "John".constructor // Returns function String() {[native code]}<br>
+                            (3.14).constructor // Returns function Number() {[native code]}<br>
+                            false.constructor // Returns function Boolean() {[native code]}<br>
+                            [1,2,3,4].constructor // Returns function Array() {[native code]}<br>
+                            {name:'John',age:34}.constructor // Returns function Object() {[native code]}<br>
+                            new Date().constructor // Returns function Date() {[native code]}<br>
+                            function () {}.constructor // Returns function Function(){[native code]}<br>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Shallow copy & deep copy</h4>
+                        <ol>
+                            <li>Shallow copy:
+                                <ul>
+                                    <li>Assignment</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Function</h4>
+                        <ol>
+                            <li>
+                                <a href="./0804_JS_总结_属性检查_垃圾回收.html#this-usage">
+                                    <i class="fa-solid fa-hand-point-right"></i> this
+                                </a>
+                            </li>
+                            <li><a href="./0804_JS_总结_属性检查_垃圾回收.html#Constructor"><i class="fa-solid fa-hand-point-right"></i>Constructor</a></li>
+                            <li>
+                                <a href="./0804_JS_函数_作用域_this_工厂对象_原型对象.html#Prototype">
+                                    <i class="fa-solid fa-hand-point-right"></i> Prototype
+                                </a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Literal & new</h4>
+                        <ol>
+                            <li>
+                                Use string literals "" instead of new String().
+                            </li>
+                            <li> 
+                                Use number literals 50 instead of new Number().
+                            </li>
+                            <li>
+                                Use boolean literals true / false instead of new Boolean().
+                            </li>
+                            <li> 
+                                Use object literals {} instead of new Object().
+                            </li>
+                            <li> 
+                                Use array literals [] instead of new Array().
+                            </li>
+                            <li>
+                                Use pattern literals /()/ instead of new RegExp().
+                            </li>
+                            <li>
+                                Use function expressions () {} instead of new Function().
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>JavaScript Iterables</h4>
+                        <ol>
+                            <li>
+                                for..of: for (const x of "W3Schools"){//over String Array}
+                            </li>
+                            <li>JavaScript Iterators
+                                
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>JSON</h4>
+                        <ol>
+                            <li>JavaScript Object Notation</li>
+                            <li>
+                                JSON exists as a string
+                            </li>
+                            <li>JSON requires double quotes to be used around strings and property names. 
+                                Single quotes are not valid other than surrounding the entire JSON string.
+                            </li>
+                            <li>Object / Array format</li>
+                            <li>convert to an object: JSON.parse(JSONString) <span class="fa fa-arrow-right"></span> Object </li>
+                            <li>JSON.stringify(Object) <span class="fa fa-arrow-right"></span> JSONString</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        // printLog("log01");
+        // console.log("22222");
+        // console.log("22222");
+        // console.log("22222");
+        // console.log("22222");
+        // printLog("log02");
+        // console.log("222212");
+        // console.log("222212");
+        // console.log("222212");
+        // console.log("222212");
+    </script>
+</body>
+
+</html>

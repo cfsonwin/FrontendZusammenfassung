@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <style>
+        #ex1>p {
+            color: blue;
+        }
+
+        #ex2:hover {
+            background-color: green;
+            ;
+        }
+
+        #ex2 p {
+            color: rgb(49, 155, 132);
+        }
+
+        #ex2+div {
+            color: rgb(184, 149, 149);
+        }
+
+        #ex4~div {
+            background-color: rgb(112, 102, 240);
+            color: #fff;
+        }
+
+        #div2>p::after {
+            content: "]";
+        }
+
+        #div2>p::first-letter {
+            color: #fc7adb;
+            font-size: 50px;
+        }
+
+        #div2 li:last-child {
+            color: rgb(228, 219, 99);
+        }
+
+        #div2>p:first-child {
+            color: rgb(37, 126, 99);
+        }
+
+        #div2 ul>li:first-of-type {
+            background-color: rgb(0, 255, 76);
+        }
+
+        #div2 li:nth-of-type(even) {
+            color: rgb(30, 106, 206);
+        }
+
+        #div2 ::selection {
+            color: rgb(250, 250, 250);
+            background-color: rgb(34, 199, 117);
+        }
+    </style>
+    <title>0822 Introduction Selectors</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="CSS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0822 Introduction Selectors</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Introduction:</h4>
+                        <ol>
+                            <li>CSS removed the style formatting from the HTML page, including the design, layout and
+                                variations in display for different devices and screen sizes.</li>
+                            <li>The style definitions are normally saved in external .css files.</li>
+                            <li>External CSS, Internal CSS, Inline CSS</li>
+                            <li>syntax: Selector { property:value; }</li>
+                            <li>The declaration block contains one or more declarations separated by semicolons.</li>
+                            <li>Comments: /*----------CSS Comments-----------*/</li>
+                            <li>Style inheritance:为一个元素设置样式也会继承到他的后代中</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>CSS Selectors</h4>
+                        <ul>
+                            <li>Universal selector:“ * ”</li>
+                            <li>CSS element Selector, for example &lt;p&gt; </p>
+                            </li>
+                            <li>CSS id Selector: hash (#) character. [#id {************} ]</li>
+                            <li>CSS class Selector: [.className {************}] HTML elements can also refer to more
+                                than one class.</li>
+                            <li>CSS Grouping Selector: selects all the HTML elements with the same style definitions.
+                                like [ele1, #id, .class, ... {************} ]</li>
+                            <li>CSS Combinators <a href="#ex1">[Go example]</a>:
+                                <ul>
+                                    <li>child selector:father_ele &gt; child_ele {************}</li>
+                                    <li>Descendant Selector: [space]. All elements that are descendants of a specified
+                                        element.</li>
+                                    <li>Adjacent Sibling Selector : ele1 + ele2 {************}</li>
+                                    <li>General Sibling Selector: ele1 ~ ele2 {************}</li>
+                                </ul>
+                                <div class="ex" id="ex1">
+                                    <h4>#ex1 > p:</h4>
+                                    <p>ex1的直接子元素,蓝色显示</p>
+                                    <div>
+                                        <p>ex1的子元素div的子元素,不会蓝色显示</p>
+                                    </div>
+                                    <div id="ex2">
+                                        <h4>#ex2[space]p:</h4>
+                                        <div>
+                                            <p>ex2的子元素div的子元素,后代元素,青色显示</p>
+                                        </div>
+                                    </div>
+                                    <div id="ex3">
+                                        <h4>#ex2+div:</h4>
+                                        <div>
+                                            <p>ex2的下一个紧挨着的div兄弟元素,红色显示</p>
+                                        </div>
+                                    </div>
+                                    <div id="ex4">
+                                        <h4>#ex2+div:</h4>
+                                        <div>
+                                            <p>ex2的没有挨着的兄弟元素</p>
+                                        </div>
+                                    </div>
+                                    <h4>#ex4 ~ div</h4>
+                                    <div>div:ex5</div>
+                                    <div>div:ex6</div>
+                                    <p>p:ex7</p><span>span 元素</span>
+                                    <div>div:ex8</div>
+                                </div>
+                            </li>
+                            <li>CSS [attribute] Selector:
+                                <ul>
+                                    <li>element[attribute="value"]{************} select elements with a specified
+                                        attribute and value.</li>
+                                    <li>element[attribute]{************} Selects all elements with a target attribute
+                                    </li>
+                                    <li>element[attribute^=value]{************} attribute value begins with value</li>
+                                    <li>element[attribute$=value]{************} attribute value ends with value</li>
+                                    <li>element[attribute*=value]{************} attribute value contains value</li>
+                                </ul>
+                            </li>
+                            <li>Pseudo-class Selector:<a href="#div2">[Go example]</a>
+                                <ul>
+                                    <li>Pseudo-classes:A pseudo-class is used to define a special state of an element.
+                                        For example, it can be used to: Style an element when a user mouses over it...
+                                    </li>
+                                    <li>The [:first-child] pseudo-class matches a specified element that is the first
+                                        child of another element;
+                                        <br>:last-child;
+                                        <br>:nth-child(),value can be "odd/2n+1" "even/2n" "n"
+                                    </li>
+                                    <li>:first-of-type/:last-of-type/:nth-of-type()</li>
+                                    <li>The [:lang] pseudo-class allows you to define special rules for different
+                                        languages.</li>
+                                    <li>[:not()] element that is not a "xx" element</li>
+                                    <li>Links can be displayed in different ways [in order]:<br>
+                                        :link(unvisited link) -&gt;
+                                        :visited(visited link) -&gt;
+                                        :hover(mouse over link) -&gt;
+                                        :active(selected link)
+                                    </li>
+                                    <a href="./0901_CSS_渐变表格_表单.html">
+                                        <i class="fa-solid fa-hand-point-right"></i>
+                                        pseudo class for input element
+                                    </a>
+                                </ul>
+                                <div class="ex" id="div2">
+                                    <p>生成一个列表,第一个子元素为红色,第一个li元素为绿色背景,偶数的li元素为蓝色。</p>
+                                    <ul>
+                                        <p>ppppppppp</p>
+                                        <li>11111111</li>
+                                        <li>22222222</li>
+                                        <li>33333333</li>
+                                        <li>44444444</li>
+                                    </ul>
+                                    <p>end of DIV</p>
+                                </div>
+                            </li>
+                            <li>Pseudo-element Selector:
+                                <ul>
+                                    <li>to style specified parts of an element, use "::". </li>
+                                    <li>[::first-letter] Style the first letter of an element;</li>
+                                    <li>[::first-line] Style the first line of an element;</li>
+                                    <li>[::selection] matches the portion of an element that is selected by a user.</li>
+                                    <li>The [::marker] pseudo-element selects the markers of list items.</li>
+                                    <li>[::before] insert some content before the content of an element;
+                                        [::after]insert some content after the content of an element.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Cascading Order:</h4>
+                        <ul>
+                            <li>inline style &gt; id Selector &gt; (pseudo-)class Selector &gt; element Selector</li>
+                            <li>Combinators adding order together [like 1000,100,10,1 each type], but not have the
+                                priority than next level</li>
+                            <li>Grouping Selector don't add</li>
+                            <li>use the style defined later with same priority</li>
+                            <li>with "!importent" get the highest priority. </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>

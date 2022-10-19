@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>0920 HTTP Express</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="AJAX">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0920 HTTP Express</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                    <li>
+                        <h4>HTTP</h4>
+                        <ol>
+                            <li>consist of Request and Respond</li>
+                            <li>Request
+                                <ul>
+                                    <li>
+                                        A <span class="red">start-line</span> describing the requests to be implemented,
+                                        or its status of whether successful or a failure. This start-line is always a
+                                        single line.
+                                        包含HTTP method:get还是post等等->request target:url路径->HTTP version
+                                    </li>
+                                    <li>
+                                        An optional set of <span class="red">HTTP headers</span> specifying the request,
+                                        or
+                                        describing the body included in the message.
+                                        in form of [key: value]
+                                    </li>
+                                    <li>A <span class="red">blank line</span> indicating all meta-information for the
+                                        request has been sent.</li>
+                                    <li>
+                                        An optional <span class="red">body</span> containing data associated with the
+                                        request (like content of an HTML form),
+                                        or the document associated with a response. The presence of
+                                        the body and its size is specified by the start-line and HTTP headers.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Response
+                                <ul>
+                                    <li>Status line: protocol version->status code[202/404/403]->status text["OK"]</li>
+                                    <li>Headers</li>
+                                    <li>blank line</li>
+                                    <li>Body</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Express</h4>
+                        <ol>
+                            <li>npm init --yes</li>
+                            <li>install with nodeJs: npm i express</li>
+                            <li>simple express.js:
+                                <div class="ex">
+                                    // invote Express frame <br>
+                                    const { request, response } = require("express");<br>
+                                    const express = require("express");<br><br>
+
+                                    // create express app-obj<br>
+                                    const app = express();<br><br>
+
+
+                                    // create router rules<br>
+                                    app.get("/", (request, response)=>{<br>
+                                    response.send("hallo express");<br>
+                                    });<br><br>
+
+                                    // start service<br>
+                                    app.listen(8000, ()=>{<br>
+                                    console.log("Service Started!");<br>
+                                    });<br>
+                                </div>
+                            </li>
+                            <li>start service: node ./express.js</li>
+                            <li>allow self-define headers: response.setHeader("Access-Control-Allow-Headers", "*");</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

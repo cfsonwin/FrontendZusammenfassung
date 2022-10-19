@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>0920 Example</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="AJAX">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0920 Example</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Example 1</h4>
+                        click on button to send a request and display response in block
+                        <button id="btn1">Send</button>
+                        <div class="ex">
+
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Example 2</h4>
+                        mouse over block to send a request and display response in block
+                        <div class="ex">
+
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Example 3</h4>
+                        press arbitrary keyboard to send a request and display response in block
+                        <div class="ex">
+
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Ajax components</h4>
+                        <ol>
+                            <li>XMLHttpRequest Object Methods
+                                <table style="font-size: 0.9em; margin: 10px auto;">
+                                    <tbody>
+                                        <tr>
+                                            <th style="width:35%">Method</th>
+                                            <th style="width:65%">Description</th>
+                                        </tr>
+                                        <tr>
+                                            <td>new XMLHttpRequest()</td>
+                                            <td>Creates a new XMLHttpRequest object</td>
+                                        </tr>
+                                        <tr>
+                                            <td>abort()</td>
+                                            <td>Cancels the current request</td>
+                                        </tr>
+                                        <tr>
+                                            <td>getAllResponseHeaders()</td>
+                                            <td>Returns header information</td>
+                                        </tr>
+                                        <tr>
+                                            <td>getResponseHeader()</td>
+                                            <td>Returns specific header information</td>
+                                        </tr>
+                                        <tr>
+                                            <td>open(<em>method,url,async,user,psw</em>)</td>
+                                            <td>Specifies the request<br><br><em>method</em>: the request type GET or
+                                                POST<br>
+                                                <em>url</em>: the file location<br>
+                                                <em>async</em>: true (asynchronous) or false
+                                                (synchronous)<br><em>user</em>: optional user name<br><em>psw</em>:
+                                                optional password
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>send()</td>
+                                            <td>Sends the request to the server<br>Used for GET requests</td>
+                                        </tr>
+                                        <tr>
+                                            <td>send(<em>string</em>)</td>
+                                            <td>Sends the request to the server.<br>Used for POST requests</td>
+                                        </tr>
+                                        <tr>
+                                            <td>setRequestHeader()</td>
+                                            <td>Adds a label/value pair to the header to be sent</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li>open()
+                                <ul>
+                                    <li>GET: use "?" follow url with information</li>
+                                    <li>POST: To POST data like an HTML form, add an HTTP header with setRequestHeader(). 
+                                        Specify the data you want to send in the send() method</li>
+                                    <li>
+                                        setRequestHeader(header, value)
+                                    </li>
+                                    <li>url: the server (file) location </li>
+                                </ul>
+                            </li>
+                            <li>onreadystatechange Property</li>
+                            <li>readystate: 0 1 2 3 4</li>
+                            <li>
+                                xhr.abort() cancel requests
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Response with json</h4>
+                        <ol>
+                            <li>set XMLHttpRequest.responseType = 'json';</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/ajax_ex1.js"></script>
+</body>
+
+</html>

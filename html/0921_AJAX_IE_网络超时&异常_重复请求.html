@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>0921 IE 网络超时&异常 重复请求</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="AJAX">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0921 IE 网络超时&异常 重复请求</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>解决IE缓存请求数据问题</h4>
+                        <ol>
+                            <li>在请求的url后加上时间戳: 'http://...?t=' + Date.now()</li>
+                            <li>相当于请求的不是同一个地址</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>网络超时&异常</h4>
+                        <ol>
+                            <li>超时设置: xhr.timeout = 2000;</li>
+                            <li>xhr.ontimeout = function(){...}</li>
+                            <li>xhr.onerror = function(){...}</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>防止重复请求</h4>
+                        <ol>
+                            <li>检测到相同请求，取消上一个， 减小服务器压力</li>
+                            <li>创建一个flag比如叫做isSending=false，
+                                开始发送前设置为true，readyState==4时设为true
+                            </li>
+                            <li>所以加入if(isSending) xhr.abort();</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

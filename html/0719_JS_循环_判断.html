@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <title>0719 循环 判断</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0719 循环 判断</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>判断</h4>
+                        <ol>
+                            <li>if(){}else if{}else{}</li>
+                            <li>switch(条件表达式){case 表达式： 语句; break;}</li>
+                        </ol>
+                        <div class="ex" id="log01">
+
+                        </div>
+                    </li>
+                    <li>
+                        <h4>循环</h4>
+                        <ol>
+                            <li>while(){}</li>
+                            <li>do{}while() 限制性循环体，再对while后的表达式判断</li>
+                            <li> for(var i=0; i &lt; 10; i++){} </li>
+                        </ol>
+                        <div class="ex" id="log02">
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var score = 99;
+        printLog("log01");
+        if (score > 10 && score < 20) {
+            console.log("score比10大且小于20", "score = ", score);
+        } else if (score >= 20) {
+            console.log("score大于20", "score = ", score);
+        } else {
+            console.log("score = ", score);
+        }
+        var a = "2s";
+        console.log("a = " + a + ", 则a:");
+        switch (a) {
+            case 1: console.log("one"); break;
+            case 2: console.log("two"); break;
+            case 3: console.log("three"); break;
+            case 4: console.log("four"); break;
+            default: console.log("不在1-4之间"); break;
+        }
+        console.log("score = " + score + ", 则");
+        switch (true) {
+            case score < 60: console.log("不合格"); break;
+            default: console.log("合格"); break;
+        }
+        printLog("log02");
+        var b = 5;
+        while (b > 0) {
+            console.log(b--);
+        }
+        console.log("for (var i = 0; i < 5; i++) { console.log(i);}")
+        for (var i = 0; i < 5; i++) {
+            console.log(i);
+        }
+        console.log(i + " -> i可以在循环体外面使用");
+        // for (var i = 100; i < 1000; i++) {
+        //     var h = parseInt(i / 100);
+        //     var s = parseInt((i - h * 100) / 10);
+        //     var g = parseInt(i % 10);
+        //     if (h * h * h + s * s * s + g * g * g == i) {
+        //         console.log(i);
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>0812 BOM</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0812 BOM</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>BOM</h4>
+                        <ol>
+                            <li>浏览器对象模型</li>
+                            <li>通过操作JS操控浏览器</li>
+                            <li>BOM对象：都保存为window的属性
+                                <ul>
+                                    <li>window：代表浏览器窗口</li>
+                                    <li>navigator：代表当前浏览器信息，识别不同浏览器</li>
+                                    <li>location：地址栏信息，用于获取地址栏信息或者页面跳转</li>
+                                    <li>history：历史记录，由于隐私问题，并不能获取具体历史记录只能操控向前或向后，且只有当次有效</li>
+                                    <li>screen：获取屏幕相关信息</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Navigator: <span id="naviName"></span></h4>
+                        <ol>
+                            <li>属性：
+                                <ul>
+                                    <li>appName：由于历史原因，navigator中大部分属性不能用于识别浏览器。</li>
+                                    <li>一般用userAgent判断浏览器信息，是一个字符串，不同浏览器不同</li>
+                                </ul>
+                            </li>
+                            <li>IE浏览器在11之后就不好识别了，不好通过userAgent判断，但可以通过一些特定的window属性判断：xxx in window</li>
+                        </ol>
+                        <table>
+                            <tr>
+                                <th>attribute</th>
+                                <th>value</th>
+                            </tr>
+                            <tr>
+                                <td>.appName:</td>
+                                <td id="appName"></td>
+                            </tr>
+                            <tr>
+                                <td>.appCodeName:</td>
+                                <td id="appCodeName"></td>
+                            </tr>
+                            <tr>
+                                <td>.userAgent:</td>
+                                <td id="userAgent"></td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <h4>History</h4>
+                        <!-- <a href="./historytest.html">Go to test page.</a> -->
+                        <ol>
+                            <li>
+                                属性.length: <span id="historyLength"></span>。关闭之前的访问链接数量
+                            </li>
+                            <li>方法：
+                                <ul>
+                                    <li>back()。<button id="btnBack">Back</button></li>
+                                    <li>forward()。<button id="btnForward">Forward</button></li>
+                                    <li>go():向前跳转(-)n个页面。<button id="btnGo">Go</button></li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Location</h4>
+                        <ol>
+                            <li>
+                                直接打印location获取地址栏路径：<span id="location"></span>
+                            </li>
+                            <li>可以和实践链接一起，直接修改location的值。<button id="toBaidu">Go to baidu</button></li>
+                            <li>
+                                <ul>
+                                    <li>.assign(): 跳转页面，和直接修改location一样</li>
+                                    <li>.reload(): 刷新页面，传入参数true强制清空缓存</li>
+                                    <li>.replace(): 类似assign，但不会生成历史记录</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        document.getElementById("appName").innerHTML = navigator.appName;
+        document.getElementById("appCodeName").innerHTML = navigator.appCodeName;
+        document.getElementById("userAgent").innerHTML = navigator.userAgent;
+        var ua = "else";
+        if (/firefox/i.test(navigator.userAgent)) {
+            ua = "Firefox";
+        } else if (/chrome/i.test(navigator.userAgent)) {
+            ua = "Chrome";
+        } else if (/msie/i.test(navigator.userAgent)) {
+            ua = "IE";
+        }
+        document.getElementById("naviName").innerHTML = ua;
+        document.getElementById("historyLength").innerHTML = history.length;
+        var btnBack = document.getElementById("btnBack");
+        btnBack.onclick = function() {
+            history.back();
+        };
+        var btnForward = document.getElementById("btnForward");
+        btnForward.onclick = function() {
+            history.forward();
+        };
+        var btnGo = document.getElementById("btnGo");
+        btnGo.onclick = function() {
+            history.go(-2);
+        };
+        document.getElementById("location").innerHTML = location;
+        var btnToBaidu = document.getElementById("toBaidu");
+        btnToBaidu.onclick = function() {
+            location = "http://www.baidu.com";
+            //location.assign("http://www.baidu.com");
+        };
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <title>0804 this总结 属性检查 垃圾回收</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0804 this总结 属性检查 垃圾回收</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Day5 总结</h4>
+                        <ol>
+                            <li>
+                                两种类似于"类"的函数构造方法:
+                                <ul>
+                                    <li>工厂对象函数: 新建一个obj在函数定义中并作为返回值返回, 正常函数调用。</li>
+                                    <li id="Constructor">构造函数( Constructor ): 构造函数是一种特殊的函数, 主要用来初始化对象,
+                                        即为对象成员变量赋初始值, 它总<span class="red">与 new 一起</span>使用.
+                                        我们可以把对象中一些公共的属性和方法抽取出来, 然后封装到这个函数里面.
+                                    </li>
+                                    <li>构造函数里面不需要 return</li>
+                                    <li>一般情况下, 公共的属性定义到构造函数里面, 公共的方法放在原型对象身上. </li>
+                                </ul>
+                            </li>
+                            <li id="this-usage">
+                                this的两种主要用法:
+                                <ul>
+                                    <li>非构造函数, this指向调用的这个函数的对象。默认是window, 对象的方法指向这一对象</li>
+                                    <li>构造函数使用this添加"类"的属性</li>
+                                    <li>改变函数内部 this 指向, 常用的有 bind()、call()、apply()</li>
+                                    <li>call() method: Func.call(obj, "argu1", "argu2");</li>
+                                </ul>
+                                <img src="../src/img/this.png" alt="">
+                                <p>Generally for an object:
+                                    the this keyword refers to an object.
+                                    Which object depends on how this is being invoked (used or called).
+                                    The this keyword refers to different objects depending on how it is used:
+                                </p>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>In an object method, <span class="red">this</span> refers to the
+                                                <b>object</b>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alone, <span class="red">this</span> refers to the <b>global
+                                                    object</b>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>In a function, <span class="red">this</span> refers to the
+                                                <b>global object</b>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>In a function, in strict mode, <span class="red">this</span> is
+                                                <span class="red">undefined</span>.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>In an event, <span class="red">this</span> refers to the
+                                                <b>element</b> that received the event.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Methods like <span class="red">call()</span>, <span
+                                                    class="red">apply()</span>,
+                                                and <span class="red">bind()</span> can refer <span
+                                                    class="red">this</span> to <b>any object</b>.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                        </ol>
+                        <div class="ex" id="log01"></div>
+                    </li>
+                    <li>
+                        <h4>检查属性</h4>
+                        <ol>
+                            <li>in: attribute in obj 返回布尔值</li>
+                            <li>hasOwnProperty()方法, 自身有的属性返回true, 原型对象中的返回false</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>toString()</h4>
+                        <ol>
+                            <li>当直接console.log一个对象时, 相当于调用了obj.toString()方法</li>
+                            <li>可以重写储存在原型的原型中的方法</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>垃圾回收</h4>
+                        <ol>
+                            <li>当一个对象没有任何变量去引用的时候, 变得不能操作, 就是一个垃圾, 例如obj=null后</li>
+                            <li>JS中有自动清理垃圾对象的机制</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        printLog("log01");
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.f1 = function () {
+            this.age += 1;
+        }
+        var p1 = new Person("p1_name", 19);
+        p1.f1();
+        console.log(p1.age);
+        console.log(p1);
+        console.log(p1.__proto__.__proto__.hasOwnProperty("toString"));
+    </script>
+</body>
+
+</html>

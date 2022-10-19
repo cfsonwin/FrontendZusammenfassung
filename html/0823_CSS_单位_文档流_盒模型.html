@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>0823 Color Unit Box-model Document-Flow</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="CSS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0823 Color Unit Box-model Document-Flow</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>单位</h4>
+                        <ol>
+                            <li>px：像素</li>
+                            <li>100%：百分比，设置相对于父元素的百分比</li>
+                            <li>em：相对于font-size的大小，默认1em为16px</li>
+                            <li>rem：相对于根【root】元素的字体大小</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>颜色单位</h4>
+                        <ol>
+                            <li>可以用颜色名设置各种颜色</li>
+                            <li>使用rgb、rgba值，0~255（0%~100%）</li>
+                            <li>语法：rgb(xx, xx, xx)；rgba(xx, xx, xx, 0-1的透明度)</li>
+                            <li>十六机制rgb表示：【# xx xx xx】每个xx是00-ff</li>
+                            <li>HSL、HSLA值，h表示色相，s是饱和度，l是亮度</li>
+                            <li>h:0-360; s:0%-100%; l:0%-100%</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>文档流 normal flow</h4>
+                        <ol>
+                            <li>网页时一个多层的结构，最底下的一层是文档流</li>
+                            <li>创建的元素默认在文档流中，所以元素有两个状态,在文档流中或者不在文档流中。</li>
+                            <li>块儿元素在文档流中独占一行，默认宽度是父元素的宽度。默认高度被子元素撑开</li>
+                            <li>行内元素不换行，自左向右水平排列，自动换行。默认宽度和高度都取决于内容。</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>盒模型 box model</h4>
+                        <ol>
+                            <li>页面中的所有元素都是一个矩形的box</li>
+                            <li>页面的布局就是把每个box摆放在不同的位置</li>
+                            <li>组成部分：content border padding margin <br>
+                                <img src="https://miro.medium.com/max/725/1*2jZwpWH9XO_QllhEpyGqMA.png" alt="box model">
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>

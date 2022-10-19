@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <title>0805 数组 Date 函数方法与参数</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0805 数组 Date 函数方法与参数</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>数组 Array</h4>
+                        <ol>
+                            <li>数组也是一个对象, 用来存储数据</li>
+                            <li>由索引index和值value组成</li>
+                            <li>创建新数组var arr = new Array();或者 var arr = [];</li>
+                            <li>添加元素: arr[0] = 10;</li>
+                            <li>.length(属性, 不是方法) 返回数组长度, 可以用来修改数组长度: 删除多余元素或创建空元素</li>
+                            <li>可以储存任意类型, 包括对象以及函数</li>
+                            <li>-1倒数第一个元素</li>
+                            <li>方法: 
+                                <ul>
+                                    <li>
+                                        转为字符串
+                                        <ol><li>.join(“连接符”) 将原数组转化为字符串, 默认用逗号连接。specify the separator</li>
+                                            <li>.toString()方法也可以转为字符串</li>
+                                        </ol>
+                                    </li>
+                                    <li>操作第一个或者最后一个数据
+                                        <ol>
+                                            <li>.push() 在数组后面添加一个或多个元素并返回数组长度</li>
+                                            <li>.pop() 删除数组的最后一个元素, 并返回删除的元素</li>
+                                            <li>.unshift() 在数组开始添加一个或多个元素并返回数组长度</li>
+                                            <li>.shift() 删除数组的第一个元素, 并返回删除的元素, 相当于向左平移</li>
+                                        </ol>
+                                    </li>
+                                    <li>使用index number操控任意位置数据, 包括修改数据以及添加数据。直接delete array[0]不会删除数据, 而会变成undefined</li>
+                                    <li>
+                                        Merging (Concatenating) Arrays
+                                        <ol>
+                                            <li>.concat(arr1, arr2) 合并数组到后面并返回, 原数组不变</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        Splicing [删除+添加元素] and Slicing Arrays[切片] 
+                                        <ol>
+                                            <li>.slice(start_position, end_position) 切片, <span class="red">不会改变原数组</span>, 而是返回一个新数组</li>
+                                            <li>.splice(start_position, count, new_element...)
+                                                从start_index开始删除count个, 并添加new_elememt进入数组, 改变原数组并返回删除的元素. </li>
+                                        </ol>
+                                    </li>
+                                    
+                                    <li>.reverse() 反转数组, 直接改变原数组</li>
+                                    
+                                    <li>
+                                        排序
+                                        <ol>
+                                            <li>.sort() 排序, 默认按Unicode编码排序, 直接改变原数组, <span class="red">可以传入一个回调函数</span>。</li>
+                                            <li>points.sort(function(a, b){return b - a});</li>
+                                            <li>将数组中的元素作为实参调用回调函数, 且a一定在b前面。返回大于0的值则会交换。</li>
+                                            <li>Math.max.apply(null, arr); //find the highest number in an array </li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li name="iterator">遍历: 
+                                <ul>
+                                    <li>for(var i=0; i &lt; arr.length; i++){ console.log(arr[i]); }</li>
+                                    <li>.forEach(function(value, index, array){});方法: calls a function (a callback function) once for each array element.</li>
+                                    <li>Note that the function takes 3 arguments:
+                                        The item value;
+                                        The item index;
+                                        The array itself;</li>
+                                    <li>
+                                        .map()
+                                        <ol>
+                                            <li><span class="red">不会改变原数组</span>，与forEach()相反</li>
+                                            <li> the function takes 3 arguments:
+                                                The item value
+                                                The item index
+                                                The array itself
+                                                When a callback function uses only the value parameter, the index and array parameters can be omitted</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        .reduce(Func, initial value of total)
+                                        <ol>
+                                            <li><span class="red">不会改变原数组</span></li>
+                                            <li>遍历后产生一个single value</li>
+                                            <li> function takes 4 arguments:
+                                                <span class="red">The total (the initial value / previously returned value);</span> 
+                                                The item value;
+                                                The item index;
+                                                The array itself</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        The reduceRight() works from right-to-left in the array.
+                                    </li>
+                                    <li>
+                                        .every()
+                                        <ol>
+                                            <li>The every() method checks if all array values pass a test.</li>
+                                            <li>Note that the function takes 3 arguments:
+                                                The item value;
+                                                The item index;
+                                                The array itself;</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        .some(): The some() method checks if some array values pass a test.
+                                    </li>
+                                    <li>
+                                        .find(): returns the value of the first array element that passes a test function.
+                                    </li>
+                                    <li>
+                                        .filter(): Creates a new array with every element in an array that pass a test
+                                    </li>
+                                    <li>
+                                        .indexOf() 查找元素角标, 没有找到的话返回-1, 有的话返回找到的第一个
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="ex" id="log01"></div>
+                    </li>
+                    <li>
+                        <h4>时间 Date</h4>
+                        <ol>
+                            <li>var d = new Date(); 封装执行代码时的时间</li>
+                            <li>Date(mm/dd/yyyy hh:mm:ss)</li>
+                            <li>
+                                方法: 
+                                <ul>
+                                    <li>.getDate() 当前日期几号</li>
+                                    <li>.getDay() 当前日期周几, 返回0~6,  周日是0 </li>
+                                    <li>.getMonth() .getFullYear() .getYear()... 当前日期月份</li>
+                                    <li>.getTime() 获取当前时间的时间戳 </li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="ex" id="log02"></div>
+                    </li>
+                    <li>
+                        <h4>函数的方法 .call() .apply()</h4>
+                        <ol>
+                            <li>都会调用函数, 可以传入对象当参数, 传入的对象作为函数中的this替代window</li>
+                            <li>通过函数对象来调用.已有function func(){};
+                                <ul>
+                                    <li>func.call() 传入的对象后传实参</li>
+                                    <li>func.apply() 实参要封装到数组中传入</li>
+                                </ul>
+                            </li>
+
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>arguments:隐藏函数传入参数</h4>
+                        <ol>
+                            <li>类数组对象, 保存传入的实参</li>
+                            <li>.length属性</li>
+                            <li>.callee属性, 指代当前调用的函数函数对象</li>
+                            <li>通过索引取值: arguments[]</li>
+                        </ol>
+                    </li>
+                    <div class="ex" id="log03"></div>
+                    <li>
+                        <h4>数组补充</h4>
+                        <ol>
+                            <li>It is a common practice to declare arrays with the const keyword.</li>
+                            <li>It does NOT define a constant array. It defines a constant reference to an array.
+                                Because of this, we can still change the elements of a constant array.</li>
+                            <li>JavaScript has a built-in array constructor new Array().
+                                But you can safely use [] instead.
+                            </li>
+                            <li>Array.isArray() to Recognize an Array</li>
+                            <li> .sort() .forEach() .map() 可以传入回调函数</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        printLog("log01");
+        var arr = new Array();
+        arr[0] = 10;
+        console.log("arr: ", arr);
+        console.log("arr.length: " + arr.length);
+        arr[arr.length] = 20;
+        console.log("arr: ", arr);
+        console.log("arr.length: " + arr.length);
+        var arr_2 = [1, 2, 3];
+        console.log("arr_2: ", arr_2);
+        console.log("arr_2.length: " + arr_2.length);
+        // 构造函数创建数组
+        var arr_4 = new Array(2, 4, 5);
+        console.log("arr_4: ", arr_4);
+        var new_leng = arr_2.push("zzz");
+        console.log("arr_2: ", arr_2);
+        var new_leng = arr_2.unshift("zzz");
+        console.log("arr_2: ", arr_2);
+        //回调函数, 由浏览器自动调用
+        arr_2.forEach(function (e, i, arr) {
+            console.log(e==arr[i]);
+            console.log(e, "index=" + i, "[" + arr + "]");
+        });
+        arr_2.splice(1, 0, "new_element1", "new_element2");
+        console.log("arr_2: ", arr_2);
+        arr_5 = [1, 2, 55, 6, 7, 8, 14, 45, 75, 11, 56, 47];
+        console.log(arr_5.sort())
+        arr_5.sort(function (a, b) { //将数组中的元素作为实参调用回调函数, 且a一定在b前面
+            //console.log(a, "\t", b);
+            //console.log(arr_5);
+            // 返回大于0的值则会交换
+            return a - b;
+        });
+        console.log(arr_5);
+
+        printLog("log02");
+        var myDate = new Date("08/05/2022 16:05:55");
+        console.log(myDate);
+
+        
+        printLog("log03");
+        function func(a) {
+            console.log("arguments.length: " + arguments.length);
+            console.log(arguments[1]);
+            console.log("arguments[0]==a: ", arguments[0] == a);
+        }
+        func(1, 2, 4);
+    </script>
+</body>
+
+</html>

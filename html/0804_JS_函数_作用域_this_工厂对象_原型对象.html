@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <title>0804 函数 作用域 this 工厂对象 原型对象</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+                
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0804 函数 作用域 this 工厂对象 原型对象</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>函数</h4>
+                        <ol>
+                            <li>函数也是一个对象</li>
+                            <li>用于封装代码</li>
+                            <li>创建函数对象(很少用): var func = new Function("console.log('hallo function')");</li>
+                            <li>函数声明: function 函数名([参数1, ...]){}</li>
+                            <li>匿名函数赋值: var func = function(){};</li>
+                            <li>实参可以是对象也可以是函数, 传入的函数带有括号传入的是返回值, 不带括号传的是函数对象</li>
+                        </ol>
+                        
+                    </li>
+                    <li>
+                        <h4>作用域</h4>
+                        <ol>
+                            <li>
+                                全局作用域:
+                                <ul>
+                                    <li>页面打开时创建</li>
+                                    <li>全局对象window, 代表一个浏览器窗口</li>
+                                    <li>创建的变量以及函数作为window的属性及方法保存</li>
+                                </ul>
+                            </li>
+                            <li>
+                                声明提前:
+                                <ul>
+                                    <li>使用var声明, 会先执行声明, 但不赋值(undefined)</li>
+                                    <li>function func(){} 的函数声明会最先创建</li>
+                                    <li>var func = function(){}; 不会提前定义函数</li>
+                                </ul>
+                            </li>
+                            <li>
+                                函数作用域:
+                                <ul>
+                                    <li>var声明, 函数内有效, 每调用一次函数会新建一个函数作用域，函数外访问不到</li>
+                                    <li>函数作用域中可以访问全局变量</li>
+                                    <li>就近原则, 函数中想访问用window.var</li>
+                                    <li>函数作用域中也有声明提前</li>
+                                    <li>函数中不使用var声明的变量, 默认为window.var</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="ex" id="log01">
+                        </div>
+                    </li>
+                    <li>
+                        <h4>this</h4>
+                        <ol>
+                            <li>每次调用函数时都会传入隐藏参数this</li>
+                            <li>根据调用方式不同, this指向不同对象
+                                <ul>
+                                    <li>以函数形式调用时, 指向window</li>
+                                    <li>以方法形式调用时, this指向调用方法的对象</li>
+                                    <li>以构造函数的形式调用时, this指向新创建的对象</li>
+                                    <li>使用call和apply时, this是传入的那个对象</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="ex" id="log02"></div>
+                    </li>
+                    <li>
+                        <h4>class:工厂对象</h4>
+                        <ol>
+                            <li> function func(){var obj = new Object(); return obj;}</li>
+                            <li>构造函数和普通函数一样, 但习惯性首字母大写: </br>function Func(name){this.name = name}</br>var obj = new
+                                Func("objName"); </li>
+                            <li>通过构造函数叫做类</li>
+                            <li>instanceof 可以用来判断某实例是否属于某一类</li>
+                            <li>构造函数中的方法, 在构造函数外定义, this.func = func[全局中定义的]</li>
+                        </ol>
+                    </li>
+                    <li id="Prototype">
+                        <h4>原型对象 prototype</h4>
+                        <ol>
+                            <li>每创建一个函数, 解析器会添加一个prototype属性, 储存一个prototype的地址</li>
+                            <li>作为普通函数调用没有作用</li>
+                            <li>作为构造函数调用时, 所创建的对象有一个隐藏属性, 指向prototype</li>
+                            <li>每个实例可以通过__proto__访问</li>
+                            <li>类似于一个公共访问区域, 所有生成的对象都可以访问, 就可以在其中定义共有的内容</li>
+                            <li>Func.prototype.attr = xxx;</li>
+                            <li>原型对象也有原型对象, 包含一些预定义的方法</li>
+                            <li>Object对象没有原型</li>
+                        </ol>
+                        <img src="../src/img/prototype.png" alt="">
+                        <div class="ex" id="log03"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        printLog("log01");
+        console.log("a: " + a);
+        var a = 10;
+        console.log(window.a)
+        function pr() {
+            var a = "func中的var";
+            d = 10;
+            console.log(a);
+            console.log("func函数");
+        }
+        window.pr();
+        console.log("函数中使用d=10声明的变量: " + d);
+
+        printLog("log02");
+        function func1() {
+            console.log(this.name);
+        }
+        var name = "windowName";
+        var obj1 = {
+            name: "obj1Name",
+            obj1Func: func1
+        };
+        func1();
+        obj1.obj1Func();
+        function func(name) {
+            var obj = new Object();
+            obj.name = name;
+            this.name1 = "name1";
+            obj.age = 19;
+            obj.pName = function () {
+                console.log(this.name);
+            }
+            return obj;
+        }
+        var obj2 = func("obj2Name");
+        var obj3 = new func("obj3Name");
+        obj2.pName();
+        obj3.pName();
+        console.log("+++++++++++++++++");
+        console.log(obj2.name1);
+        console.log(name1);
+
+        printLog("log03");
+        function Func2(name) {
+            this.name = name;
+        }
+        Func2.prototype.public = 1;
+        Func2.prototype.sayHallo = function () {
+            console.log("Hallo");
+        }
+        var obj4 = new Func2("ojb4Name");
+        console.log(obj4.name)
+        console.log(obj4.__proto__ == Func2.prototype)
+        console.log(obj4.public)
+        obj4.sayHallo()
+    </script>
+</body>
+
+</html>

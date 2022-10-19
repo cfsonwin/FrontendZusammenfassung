@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>1005 React Introduction</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="REACT">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>1005 React Introduction</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>React</h4>
+                        <ol>
+                            <li>组件化编码方案，避免重绘重排</li>
+                            <li>使用虚拟DOM，jsx</li>
+                            <li>创建容器，创建虚拟DOM，使用ReactDOM.render()方法将虚拟DOM渲染到容器中</li>
+                        </ol>
+                        <div class="ex" id="ex1"></div>
+                    </li>
+                    <li>
+                        <h4>Jsx</h4>
+                        <ol>
+                            <li>定义虚拟DOM时不要写引号</li>
+                            <li>标签中混入JS表达式时要用{}</li>
+                            <li>表达式指的是能够有返回值的式子，循环判断等不可以</li>
+                            <li>类名使用className</li>
+                            <li>内联样式使用 style={{key: value}}的形式</li>
+                            <li>只有一个根标签，且标签必须闭合</li>
+                            <li>标签首字母如小写字母开头则转化为html同名元素，若大写字母开头则会当做react组件渲染渲染</li>
+                        </ol>
+                        <div class="ex" id="ex2"></div>
+                    </li>
+                    <li>
+                        <h4>使用react展示数据</h4>
+                        <ol>
+                            <li>给react传递数组会<span class="red">自动遍历</span>数组</li>
+                            <li>传递object时不行，因为不能遍历</li>
+                            <li>使用 <a href="./0805_JS_数组_Date_函数方法与参数.html#iterator">.map()</a>方法加工数组中的数据</li>
+                        </ol>
+                        <div class="ex" id="ex3"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <!-- <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> -->
+    <!-- <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> -->
+    <!-- <script type="text/javascript" src="../js/babel.min.js"></script> -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const vDom = <h1>Hallo React</h1>
+        ReactDOM.render(vDom, document.getElementById("ex1"))
+        let myP = {test: "test p"}
+        const vDom2 = (
+            <div>
+                <h4>{myP.test}</h4>
+                <input type="text"/> 
+            </div>
+        )
+        ReactDOM.render(vDom2, document.getElementById("ex2"))
+        const data = ["data1", "data2", "data3"]
+        function addLiTag(item, index, array){
+            return <li key={index}>{item}</li>
+        }
+        const vDom3 = (
+            <div>
+                <ul>
+                   {data.map(addLiTag)}
+                </ul>
+            </div>
+        )
+        ReactDOM.render(vDom3, document.getElementById("ex3"))
+    </script>
+</body>
+
+</html>

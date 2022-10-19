@@ -1,0 +1,35 @@
+@media screen and (max-width: 768px) {
+  .ex button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fdfdfd;
+  }
+  .ex .ex-top-bar {
+    padding: 8px;
+    height: 40px;
+    background-color: rgba(109, 109, 109, 0.699);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+  }
+  .ex .ex-top-bar button .i {
+    font-size: small;
+    color: #fdfdfd;
+  }
+}
+@media screen and (min-width: 769px) {
+  .ex .ex-top-bar div {
+    display: none;
+  }
+  .ex .ex-top-bar::before {
+    content: "Show a top-bar when screen size < 768px";
+    height: 40px;
+    line-height: 40px;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <title>0801 对象 数据类型</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0801 对象 数据类型</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>对象</h4>
+                        <ol>
+                            <li>内建对象: Math String Number等</li>
+                            <li>宿主对象: BOM DOM 如document console等</li>
+                            <li>
+                                自建对象: var obj = new Object(); new关键字用来创建对象
+                                <ul>
+                                    <li>添加属性: obj.Attribute = xxx;</li>
+                                    <li>修改属性: obj.Attribute = new_xxx;</li>
+                                    <li><span class="red">删除属性:</span> delete obj.Attribute;</li>
+                                    <li>obj["属性名"] = 属性值; 这种方法更灵活</li>
+                                    <li>检查对象中是否有一个属性: "属性名" in obj;-->返回布尔值</li>
+                                </ul>
+                            </li>
+                            
+                        </ol>
+                        <div class="ex" id="log01">
+
+                        </div>
+                    </li>
+                    <li>
+                        <h4>数据类型</h4>
+                        <ol>
+                            <li>基本数据类型: 存在栈区, 存储每一个变量与对应的值</li>
+                            <li>
+                                引用对象类型: 栈区存储对象名以及堆区地址, 属性存在堆区
+                                <ol>
+                                    <li>obj2 = obj1; 通过obj2改属性的值也会导致obj1中属性值的改变, 改的是堆区里的值</li>
+                                    <li>将obj2 = null; 改变栈区中obj2的内存指向</li>
+                                    <li>比较两个引用对象, 则会比较地址</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>对象字面量</h4>
+                        <ol>
+                            <li>var obj = {属性名: 属性值, ... }; 与new方法是一样的, 最后一个属性后面没有逗号</li>
+                            <li>这种对象不是一个构造函数, 不能使用new进行实例化</li>
+                            <li>它是引用类型, 也就意味着对象名是一个指针, 当你把对象名赋值给另一个变量时,
+                                你在新变量上所做的任何操作都会影响源对象</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        printLog("log01");
+        var myObj = new Object();
+        myObj.name = "objName";
+        myObj.age = "objAge";
+        myObj["111"] = 789;
+        var n = 111;
+        console.log(myObj);
+        console.log(myObj.name);
+        console.log("myObj['111'] = 789; var n = 111; myObj[n]: ", myObj[n]);
+        var myObj2 = {
+            name: "obj2Name",
+            age: 28
+        };
+        console.log(myObj2.name);
+
+    </script>
+</body>
+
+</html>

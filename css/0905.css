@@ -1,0 +1,121 @@
+.ex {
+  background-color: #fff;
+}
+.ex .ep1 {
+  background-color: #b87d30;
+  width: 100px;
+  height: 100px;
+}
+.ex .ep2 {
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  transition: 2s;
+}
+.ex .ep3 {
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  transition: 2s;
+  border: 1px black solid;
+}
+.ex .ep4 {
+  width: 200px;
+  height: 200px;
+  background-color: #c74d4d;
+}
+.ex:hover .ep2 {
+  background-color: #fff;
+}
+.ex .nav {
+  height: 80px;
+  margin: 20px;
+  border: 2px solid black;
+  display: flex;
+}
+.ex .nav .box {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 20px;
+}
+.ex .nav .box:nth-of-type(1) {
+  flex-grow: 1;
+  background-color: pink;
+}
+.ex .nav .box:nth-of-type(2) {
+  flex-grow: 0.3;
+  background-color: #cec0ff;
+}
+.ex .nav .box:nth-of-type(3) {
+  flex-grow: 1;
+  background-color: #e2ffc0;
+}
+.ex .nav-2 {
+  height: 80px;
+  width: 50%;
+  margin: 20px;
+  border: 2px solid black;
+  display: flex;
+}
+.ex .nav-2 .box {
+  width: 200px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 20px;
+}
+.ex .nav-2 .box:nth-of-type(1) {
+  flex-shrink: 0;
+  background-color: pink;
+}
+.ex .nav-2 .box:nth-of-type(2) {
+  background-color: #cec0ff;
+}
+.ex .nav-2 .box:nth-of-type(3) {
+  background-color: #e2ffc0;
+}
+.ex .nav-3 {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+.ex .nav-3 .row {
+  height: 50px;
+  margin: 5px 0;
+  border: 1px solid black;
+  display: flex;
+}
+.ex .nav-3 .row .box {
+  width: 50px;
+  height: 50px;
+}
+.ex .nav-3 .row .box:nth-child(1) {
+  background-color: pink;
+}
+.ex .nav-3 .row .box:nth-child(2) {
+  background-color: #fdc0ff;
+}
+.ex .nav-3 .row .box:nth-child(3) {
+  background-color: #c0ffff;
+}
+.ex .nav-3 .row:nth-child(1) {
+  justify-content: flex-start;
+}
+.ex .nav-3 .row:nth-child(2) {
+  justify-content: flex-end;
+}
+.ex .nav-3 .row:nth-child(3) {
+  justify-content: center;
+}
+.ex .nav-3 .row:nth-child(4) {
+  justify-content: space-around;
+}
+.ex .nav-3 .row:nth-child(5) {
+  justify-content: space-between;
+}
+.ex .nav-3 .row:nth-child(6) {
+  justify-content: space-evenly;
+}

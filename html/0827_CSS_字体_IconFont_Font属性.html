@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <style>
+        .ep1 li {
+            list-style: none;
+        }
+
+        .ep1 li::before {
+            font: var(--fa-font-solid);
+            content: "\f007";
+            margin: 0 10px;
+        }
+
+        .ep1 {
+            padding: 0;
+        }
+        img {
+            width: 80%;
+            height: auto;
+            margin: 20px auto;
+        }
+    </style>
+    <title>0827 字体 IconFont Font属性</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="CSS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0827 字体 IconFont Font属性</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>字体</h4>
+                        <ol>
+                            <li>color</li>
+                            <li>font-size[em一个字体大小]</li>
+                            <li>font-family:serif sans-serif monospace fantasy</li>
+                            <li>如果把字体放在服务器端，css中加入@font-face{fong-family: fontName; src: url('...')}</li>
+                            <li>注意版权问题</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>icon font</h4>
+                        <ol>
+                            <li>以类似于字体的格式插入网页的图标</li>
+                            <li>可以调整大小和颜色</li>
+                            <li>font awesome
+                                <ul>
+                                    <li>下载解压后将css和webfont移动到项目中</li>
+                                    <li>将css目录下的all.css引入网页中</li>
+                                    <li>通过class引用字体</li>
+                                    <li>
+                                        也可以在css样式中使用：content=“字体的编码” 使用【fab】font-family: "font awesome 6 free" /
+                                        【fas】额外加入font-weight：900设置样式
+                                        <img src="./img/fa.png" alt="">
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <div class="ex2">
+                                <p>例如在标签中添加class="fas fa-bell" style="color: red; font-size: 2em;"</p>
+                                <span style="color: red; font-size: 2em;"><i class="fas fa-bell"></i></span>
+                                <p>设置css样式li::before{font: var(...); content: '\xxx' }</p>
+                                <ul class="ep1">
+                                    <li>line1</li>
+                                    <li>line2</li>
+                                    <li>line3</li>
+                                </ul>
+                            </div>
+                            <li>阿里的iconfont</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>line height</h4>
+                        <ol>
+                            <li>
+                                指的是每行字占的实际高度，通过line-height设置
+                            </li>
+                            <li>字体框：font-size设置其高度</li>
+                            <li>font设置字体的所有属性：【font-weight font-style等】 字体大小/行高 字体族</li>
+                            <li>font-weight：normal bold（加粗） 100-900</li>
+                            <li>font-style：italic</li>
+                            <li>text-align：left right center justify</li>
+                            <li>vertical-algin：baseline基线对齐；top/bottom/middel对齐父元素顶部/底部/中间【不是严格意义上的居中】；
+        
+                            </li>
+                            <li>图片自身放到块儿中类似于文字也有一个基线，可以设置vertical-align取消基线和父元素之间的空隙</li>
+                            <li>text-decoration：none underline line-through overline 还可以指定颜色和样式【类似于border】</li>
+                            <li>文本框设置white-space：normal nowrap【不自动换行】pre【保留空格和换行】</li>
+                            <li>文本显示有限内容以及省略号：white-space：nowrap；overflow：hidden；text-overflow：ellipsis </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>

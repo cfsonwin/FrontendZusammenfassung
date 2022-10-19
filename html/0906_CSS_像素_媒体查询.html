@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <link rel="stylesheet" href="../css/0906.css">
+    <title>0906 Pixel @media</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="CSS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0906 Pixel @media</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>像素</h4>
+                        <ol>
+                            <li>分为css像素和物理像素【屏幕像素】</li>
+                            <li>viewport视口是浏览器窗口的css像素大小</li>
+                            <li>css中1px实际占得物理像素大小由缩放比例确定</li>
+                            <li>100vw是移动端整个视口的宽度</li>
+                            <li>可以定义1rem的大小用于代替像素</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>媒体查询</h4>
+                        <ol>
+                            <li>@media</li>
+                            <li>
+                                类型：all printer screen speaker
+                            </li>
+                            <li>media feature：width height </li>
+                            <li>比如 @media (width： 400px){} 代表viewport==400px时样式生效</li>
+                            <li>一般使用min-width max-width</li>
+                            <li>延时切换的边界点为breakpoint：768px 992px 1200px</li>
+                            <li>and ,/or not</li>
+                        </ol>
+                        <div class="ex" style="min-height: 100px;">
+                            <header class="ex-top-bar">
+                                <div class="list">
+                                    <button>
+                                        <i class="fa-solid fa-list"></i>
+                                    </button>
+                                </div>
+                                <div class="titel">美图</div>
+                                <div class="account">
+                                    <button>
+                                        <i class="fa-solid fa-people-line"></i>
+                                    </button>
+                                </div>
+                            </header>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>

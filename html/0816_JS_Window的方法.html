@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <style>
+        .ex {
+            display: flex;
+        }
+
+        .square {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+        }
+    </style>
+    <title>0816 Window的方法</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0816 Window的方法</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4 style="margin-left: 15px">Window的方法</h4>
+                        <ol>
+                            <li>三个弹出窗口：alert() confirm() prompt()</li>
+                            <li>定时调用：set/clearInterval() <span id="nbForInterval"></span></li>
+                            <div class="ex" style="height: 300px;">
+                                <img src="../src/img/ES.jpg" alt="img" id="img1" style="height: 100%; width:auto;">
+                            </div>
+                            <button id="imgStopButton">Stop</button>
+                            <button id="imgStartButton">Start</button>                          
+                            <div class="ex" id="ex01">
+                                <div id="square1" class="square"> </div>
+                            </div>
+                            <li>延时调用：set/clearTimeout()只执行一次</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        // alert("this is alert");
+        // confirm("this is confirm");
+        // prompt("this is prompt");
+        var nbForInterval = document.getElementById("nbForInterval");
+        var number = 0;
+        // serInterval() 将一个函数每隔一段时间调用一次
+        var timer = setInterval(function () { //返回值是这个定时器的唯一标识
+            nbForInterval.innerHTML = number++;
+            if (number == 11) {
+                clearInterval(timer);
+            }
+        }, 1000);
+        var imgArr = ["../src/img/ES.jpg", "../src/img/html.jpg", "../src/img/js.png", "../src/img/react.jpg"];
+        var imgEle = document.getElementById("img1");
+        var index = 0;
+        var imgStartButton = document.getElementById("imgStartButton");
+        var timerImage;
+        imgStartButton.onclick = function () {
+            if (!timerImage) {
+                clearInterval(timerImage);
+                timerImage = setInterval(function () {
+                    index++;
+                    if (index == imgArr.length) {
+                        index = 0;
+                    }
+                    imgEle.src = imgArr[index];
+
+                }, 1000);
+            }
+
+        }
+        var imgStopButton = document.getElementById("imgStopButton");
+        imgStopButton.onclick = function () {
+            clearInterval(timerImage); //可以接受任何值，包括undefined
+            timerImage = undefined;
+        };
+        var ex01 = document.getElementById("ex01")
+        var sq01 = document.getElementById("square1")
+        ranPosition(sq01, ex01);
+        moveWithKeyboard02(sq01, ex01);
+    </script>
+</body>
+
+</html>

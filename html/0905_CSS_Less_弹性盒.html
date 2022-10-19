@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <link rel="stylesheet" href="../css/0905.css">
+    <script src="../js/template.js"></script>
+    <title>0905 Less Flex</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+        
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="CSS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0905 Less Flex</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Less</h4>
+                        <ol>
+                            <li>css预处理语言</li>
+                            <li>原生语言的变量设置：--var：xx；使用var(--var)调用变量</li>
+                            <li>calc()计算函数</li>
+                            <li>less包含更好的功能，需要插件进行转换为css使用</li>
+                            <li>后代元素可以写在祖先元素的{}中</li>
+                            <li>变量@xx：xx；作为变量使用直接@xx；作为部分值或者选择器时使用@{xx}</li>
+                            <li>&指代自身; represents all parent selectors (not just the nearest ancestor) </li>
+                            <li>：extend（）</li>
+                            <li>mixins:类似一类 在定义时加一个（）,可以传参并定义默认值</li>
+                            <li>less可以直接进行运算</li>
+                            <li>@import “xxxx.less”</li>
+                            <li>调试的话可以更改easy-less的配置文件</li>
+                        </ol>
+                        <div class="ex">
+                            <div class="ep1"></div>
+                            <div class="ep2"></div>
+                            <div class="ep3"></div>
+                            <div class="ep4"></div>
+
+                        </div>
+                    </li>
+                    <li>
+                        <h4>弹性盒</h4>
+                        <ol>
+                            <li>flex布局下元素具有弹性，元素大小随页面改变</li>
+                            <li>弹性容器设置display->flex，内部的子元素都是弹性元素</li>
+                            <li>flex-direction设置排列方向：row【默认】 row-reverse column(-reverse)</li>
+                            <li>排列方向也叫主轴方向，垂直的方向叫做侧轴</li>
+                            <li>弹性：flex-grow指定元素是否铺满;flex-shrink收缩=0时不收缩</li>
+                            <li>flex-wrap设置是否溢出：nowrap不自动换行 wrap换行 wrap-reverse</li>
+                            <li>flex-flow同时设置direction和wrap</li>
+                            <li>justify-content有空白时主轴方向怎么排列：flex-start flex-end center居中 space-around space-between
+                                space-even
+                            </li>
+                            <li>align-item侧轴方向：stretch将元素高度设为相同值；flex-start/-end不拉伸 center居中 base-line基线</li>
+                            <li>align-content侧轴方向空白分布</li>
+                            <li>弹性元素：align-self用来覆盖当前元素上的align-item的</li>
+                            <li>弹性元素：flex-basis元素在主轴方向的基础长度，默认auto为元素的宽度或高度</li>
+                            <li>flex：简写0 1 auto</li>
+                            <li>order调整顺序</li>
+                        </ol>
+                        <div class="ex">
+                            默认不铺满，加上flex-grow后可以铺满
+                            <div class="nav">
+
+                                <div class="box">1</div>
+                                <div class="box">2</div>
+                                <div class="box">3</div>
+                            </div>
+                            默认收缩，加上flex-shrinp：0；后不收缩【box1】
+                            <div class="nav-2">
+                                <div class="box">1</div>
+                                <div class="box">2</div>
+                                <div class="box">3</div>
+                            </div>
+                            分别展示flex-start flex-end center space-around space-between space-evenly
+                            <div class="nav-3">
+                                <div class="row">
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                    <div class="box"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>

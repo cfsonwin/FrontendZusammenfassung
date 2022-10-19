@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <title>0805 Math 包装类 String补充</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0805 Math 包装类 String补充</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Math</h4>
+                        <ol>
+                            <li>Math不是构造函数, 封装了数学运算的属性和方法</li>
+                            <li>
+                                属性：
+                                <ul>
+                                    <li>Math.E // 返回欧拉指数(Euler's number)</li>
+                                    <li>Math.PI // 返回圆周率(PI)</li>
+                                    <li>Math.SQRT2 // 返回 2 的平方根</li>
+                                    <li>Math.SQRT1_2 // 返回 1/2 的平方根</li>
+                                    <li>Math.LN2 // 返回 2 的自然对数</li>
+                                    <li>Math.LN10 // 返回 10 的自然对数</li>
+                                    <li>Math.LOG2E // 返回以 2 为底的 e 的对数(约等于 1.414)</li>
+                                    <li>Math.LOG10E // 返回以 10 为底的 e 的对数(约等于 0.434)</li>
+                                </ul>
+                            </li>
+                            <li>Math 对象方法</li>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th style="width:30%;">方法</th>
+                                        <th>描述</th>
+                                    </tr>
+                                    <tr>
+                                        <td>abs(x)</td>
+                                        <td>返回 x 的绝对值</td>
+                                    </tr>
+                                    <tr>
+                                        <td>cos(x)</td>
+                                        <td>返回 x 的余弦</td>
+                                    </tr>
+                                    <tr>
+                                        <td>sin(x)</td>
+                                        <td>返回 x(x 以角度计)的正弦</td>
+                                    </tr>
+                                    <tr>
+                                        <td>acos(x)</td>
+                                        <td>返回 x 的反余弦值, 以弧度计</td>
+                                    </tr>
+                                    <tr>
+                                        <td>asin(x)</td>
+                                        <td>返回 x 的反正弦值, 以弧度计</td>
+                                    <tr>
+                                        <td>tan(x)</td>
+                                        <td>返回角的正切</td>
+                                    </tr>
+                                    <tr>
+                                        <td>atan(x)</td>
+                                        <td>以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反正切值。</td>
+                                    </tr>
+                                    <tr>
+                                        <td>atan2(y,x)</td>
+                                        <td>返回从 x 轴到点 (x,y) 的角度</td>
+                                    </tr>
+                                    <tr>
+                                        <td>round(x)</td>
+                                        <td>把 x 四舍五入为最接近的整数</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ceil(x)</td>
+                                        <td>对 x 进行上舍入</td>
+                                    </tr>
+                                    <tr>
+                                        <td>floor(x)</td>
+                                        <td>对 x 进行下舍入</td>
+                                    </tr>
+                                    <tr>
+                                        <td>exp(x)</td>
+                                        <td>返回 Ex 的值</td>
+                                    </tr>
+                                    <tr>
+                                        <td>log(x)</td>
+                                        <td>返回 x 的自然对数(底为e)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>max(x,y,z,...,n)</td>
+                                        <td>返回最高值</td>
+                                    </tr>
+                                    <tr>
+                                        <td>min(x,y,z,...,n)</td>
+                                        <td>返回最低值</td>
+                                    </tr>
+                                    <tr>
+                                        <td>pow(x,y)</td>
+                                        <td>返回 x 的 y 次幂</td>
+                                    </tr>
+                                    <tr>
+                                        <td>sqrt(x)</td>
+                                        <td>返回 x 的平方根</td>
+                                    </tr>
+                                    <tr>
+                                        <td>random()</td>
+                                        <td>返回 0 ~ 1 之间的随机数</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>包装类</h4>
+                        <ol>
+                            <li>将基本数据类型转化为对象: String(), Number(), Boolean()</li>
+                            <li>var numObj = new Number(3);</li>
+                            <li>num.toString() 这类方法调用, 是浏览器先将基本类型保存为对象, 再调用方法</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>String补充</h4>
+                        <ol>
+                            <li>字符串以字符数组的形式保存</li>
+                            <li>var str = "adb"; console.log(str[0]);</li>
+                            <li>.concat() Combines the text of two (or more) strings and returns a new string. </li>
+                            <li> .slice(indexStart, indexEnd) extracts a section of a string and returns it as a new string, without modifying the original string.</li>
+                            <li>.subString() .substr() 和slice类似, 但不能传入负值</li>
+                            <li>.toUpperCase() .toLowerCase()</li>
+                            <li>.trim() 删除两边空格</li>
+                            <li>.charAt() 返回指定位置字符</li>
+                            <li>.indexOf(char, start_position) 返回第一次出现该字符、字符串的位置, 如果没有返回-1.可以指定开始位置</li>
+                            <li>.lastIndexOf() 从后往前找</li>
+                            <li>.split("字符块儿中的分隔符") 转为数组 和数组的.join()方法相反</li>
+                        </ol>
+                        <div class="ex" id="log01"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        printLog("log01");
+        var str = "Hallo JavaScript";
+        console.log(str.charAt(2));
+        console.log(str.charCodeAt(2)); //返回unicode编码
+        console.log(String.fromCharCode(4555)); //根据Unicode编码返回字符
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <style>
+        .grd, .rgrd {
+            width: 50px;
+            height: 50px;
+            float: left;
+            border: 2px red solid;
+            margin: 10px;
+        }
+        .grd:nth-child(1){
+            background-image: linear-gradient(red, yellow);
+        }
+        .grd:nth-child(3){
+            background-image: linear-gradient(45deg, red, yellow, green);
+        }
+        .grd:nth-child(5){
+            background-image: linear-gradient(red 20px, yellow);
+        }
+        .grd:nth-child(7){
+            background-image: repeating-linear-gradient(red, yellow 10px);
+        }
+        .rgrd:nth-child(1){
+            background-image: radial-gradient(red, yellow);
+        }
+        .rgrd:nth-child(3){
+            background-image: radial-gradient(10px 40px, red, yellow);
+        }
+        .rgrd:nth-child(5){
+            background-image: radial-gradient(40px at 0 0,red, yellow);
+        }
+        .rgrd:nth-child(7){
+            background-image: radial-gradient(farthest-corner at 10px 0, red, yellow);
+        }
+        .card {
+            margin: 50px auto;
+            /* border: 1px rgb(180, 178, 178) solid; */
+            width: 500px;
+            /* height: 800px; */
+            box-shadow:  5px 5px 15px rgba(82, 79, 79, .3);
+            position: relative;
+        }
+        .card .card-image {
+            box-sizing: border-box;
+            /* border-bottom: 1px rgb(223, 223, 223) double; */
+        }
+        .card .card-image img{
+            width: 100%;
+            /* 去掉图片基线引起的空白 */
+            vertical-align: top;
+            height: auto;
+        }
+        .card .card-body {
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        .card .card-body .title{
+            font-size: 1.5rem;
+            padding: 8px 15px;
+            font-weight: bold;
+        }
+        .card .card-body .position {
+            color: rgb(160, 160, 153);
+            font-size: .9rem;
+            padding-left: 25px;
+        }
+        .card .card-body .description{
+            padding: 20px 15px;
+            overflow: auto;
+        }
+        .card .card-footer {
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            /* position: absolute; */
+            /* background-color: aqua; */
+            /* bottom: 0; */
+            border-top: 1px rgb(223, 223, 223) double;
+        }
+        .card .card-footer .like {
+            float: left;
+            font-size: 35px;
+            color: rgb(122, 214, 134);
+            margin-left: 15px;
+        }
+        .card .card-footer .contact {
+            float: right;
+            font-size: 35px;
+            margin-right: 15px;
+        }
+        table.ep1 {
+            border: 1px solid black;
+            margin: 5px auto;
+            border-collapse: collapse;
+        }
+        table.ep1 td{
+            border: 1px solid black;
+            padding:2px 2px;
+            min-width: 5rem;
+            text-align: center;
+        }
+        table.ep1 tr:nth-child(even){
+            background-color: #bfa;
+        }
+        table.ep1 tr:nth-child(odd):not(:first-child){
+            background-color: rgb(248, 201, 163);
+        }
+    </style>
+    <title>0901 Gradient Table Form</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+        
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+    
+        
+    </header>
+    
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="CSS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0901 Gradient Table Form</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i> 
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>渐变</h4>
+                        <ol>
+                            <li>线性渐变：类似于background-image</li>
+                            <div class="ex clearfix">
+                                <div class="grd"></div>
+                                <p> background-image: linear-gradient(red, yellow);</p>
+                                <div class="grd"></div>
+                                <p>可以指定方向 to left/right/bottom/top xxxdeg turn</p>
+                                <div class="grd"></div>
+                                <p>默认情况下平均分配，但也可以调整：red 20px.在颜色后面加上该颜色起始位置</p>
+                                <div class="grd"></div>
+                                <p>使用repeating-linear-gradient实现重复</p>
+                            </div>
+                            <li>radial gradient: 语法background-image: radial-gradient(形状控制 at 位置， 颜色1, 颜色2，...);</li>
+                            <div class="ex clearfix">
+                                <div class="rgrd"></div>
+                                <p> background-image: radial-gradient(red, yellow);</p>
+                                <div class="rgrd"></div>
+                                <p>默认情况下形状根据元素形状改变，圆形或者椭圆形, 加上xxpx xxpx，或者指定circle、ellipse</p>
+                                <div class="rgrd"></div>
+                                <p>大小后面加上at可以设定位置, xxpx或者center left top</p>
+                                <div class="rgrd"></div>
+                                <p>使用closest/farthest side/corner,设置到达那里停止</p>
+                            </div>
+                            <li>人物卡片练习</li>
+                            <div class="ex">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="../src/img/card.png" alt="">
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="title">
+                                            Ningrui Zhu
+                                        </div>
+                                        <div class="position">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            Darmstadt
+                                        </div>
+                                        <div class="description">
+                                            一只可爱的小猪，小成的女朋友，当时笑得很开心。
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="like">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <div class="contact">
+                                            <a href="javascript:;">
+                                                <i class="fa-brands fa-weixin"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>表格</h4>
+                        <ol>
+                            <li>通过table标签</li>
+                            <li>可以分为三个部分：thead tbody tfoot</li>
+                            <li>tr表示一行，td表示一个单元格，header中的单元格可以用th，有加粗居中效果</li>
+                            <li>colspan=“2”横向占两个格，rowspan纵向合并单元格</li>
+                            <li>表格的样式：
+                                <ul>
+                                    <li>也是一个块儿元素</li>
+                                    <li>
+                                        border-spacing:设置table和td边框的空间大小；
+                                        border-collapse：重合table和td之间的边框
+                                    </li>
+                                    <li>如果没写tbody，浏览器会自动加上，tr是tbody的子元素，不是table的</li>
+                                    <li>td默认垂直居中，可以通过vertical-align设置</li>
+                                    <li>display：table-cell和vertical-align：middle一起使用使子元素垂直居中</li>
+                                </ul>
+                            </li>
+                            <div class="ex">
+                                <table class="ep1">
+                                    <tr>
+                                        <td>姓名</td>
+                                        <td>年龄</td>
+                                        <td>性别</td>
+                                        <td>籍贯</td>
+                                    </tr>
+                                    <tr>
+                                        <td>小红</td>
+                                        <td>28</td>
+                                        <td>女</td>
+                                        <td>南山南</td>
+                                    </tr>
+                                    <tr>
+                                        <td>小岚</td>
+                                        <td>22</td>
+                                        <td>女</td>
+                                        <td>海北</td>
+                                    </tr>
+                                    <tr>
+                                        <td>小梓</td>
+                                        <td>24</td>
+                                        <td>女</td>
+                                        <td>西江湾</td>
+                                    </tr>
+                                    <tr>
+                                        <td>小柏</td>
+                                        <td>19</td>
+                                        <td>女</td>
+                                        <td>红龙江</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>表单</h4>
+                        <ol>
+                            <li>表单用于提交数据，提交给远程服务器</li>
+                            <li>form标签创建表单，action属性指定提交地址</li>
+                            <li>表单项：input type="text"文本框 type="submit"提交按钮 value设置内容</li>
+                            <li>提交数据时必须指定name属性承载数据</li>
+                            <li>type="password"密码框；</li>
+                            <li>type=“radio”单选框，多个单选框使用相同name属性作为一组，同时指定value属性进行区分，checked设置默认选中</li>
+                            <li>type="checkbox",同样需要指定name和value属性</li>
+                            <li>select标签代表下拉列表并指定name属性，option标签使用value属性进行区分</li>
+                            <li>
+                                type='button' value=“button” <br>
+                                type='reset' 重置文本框
+                                同样也可以使用button标签并有不同的type: submit/button/reset
+                            </li>
+                            <li>其他type：color颜色选择框；email检查邮件格式；</li>
+                            <li>其他属性：
+                                <table class="ep1">
+                                    <tr>
+                                        <td>属性</td>
+                                        <td>值</td>
+                                        <td>描述</td>
+                                    </tr>
+                                    <tr>
+                                        <td>autocomplete</td>
+                                        <td>on/off</td>
+                                        <td>是否自动补全表单</td>
+                                    </tr>
+                                    <tr>
+                                        <td>readonly</td>
+                                        <td>-</td>
+                                        <td>只读，用户不能修改</td>
+                                    </tr>
+                                    <tr>
+                                        <td>disable</td>
+                                        <td>-</td>
+                                        <td>禁用表单，且不会提交数据</td>
+                                    </tr>
+                                    <tr>
+                                        <td>autofocus</td>
+                                        <td>-</td>
+                                        <td>自动获取焦点</td>
+                                    </tr>
+                                </table>
+                                autocomplete：on/off</li>
+                        </ol>
+                        <div class="ex">
+                            <form action="./0821.html">
+                                文本框1：<input type="text" name="input-text"><br>
+                                密码框：<input type="password"><br>
+                                单选：<input type="radio"  name="radio" value="1">选项一
+                                <input type="radio" name="radio" value="2">选项二<br>
+                                多选：<input type="checkbox" name="checkbox" value="1">多选一
+                                <input type="checkbox" name="checkbox" value="2">多选二
+                                <input type="checkbox" name="checkbox" value="3">多选三<br>
+                                按钮使用input标签: <input type="button" value="button">
+                                <input type="reset" value="reset">
+                                <input type="submit" value="submit"><br>
+                                或者使用button标签： <button>button</button>
+                                <button type="reset">reset</button>
+                                <button type="submit">submit</button>
+        
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+         
+    </script>
+</body>
+
+</html>
