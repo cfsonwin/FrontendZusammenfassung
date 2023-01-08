@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <script src="../js/function.js"></script>
+    <title>0719 Operators</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="JS">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>0719 Operators</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>一元运算符</h4>
+                        <ol>
+                            <li>+ 正; 进行隐式数字类型转换</li>
+                            <li>- 负; 对非number的值，则先转化为number</li>
+                            <li>++ 自增, a++=原值，之后a自增; ++a=自增后的值</li>
+                            <li>-- 自减. </li>
+                        </ol>
+                        <div class="ex" id="log01"></div>
+                    </li>
+                    <li>
+                        <h4>逻辑运算符</h4>
+                        <ol>
+                            <li>! 非，对布尔值取反, 任意数据类型两次取反将其转换为布尔值;</li>
+                            <li>&& 与; 第一个为false则后面的不会检查</li>
+                            <li>|| 或; 第一个为true则后面的不会检查</li>
+                            <li>对非布尔值进行运算，会先转换为布尔值，再运算，并返回原值。</li>
+                            <div class="ex" id="log02"></div>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>赋值运算符</h4>
+                        <ol>
+                            <li>= 右侧值赋给左侧变量</li>
+                            <li>+= a+=5 == a=a+5</li>
+                            <li>-= </li>
+                            <li>*= </li>
+                            <li>/= </li>
+                            <li>%= </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>关系运算符: 返回布尔值</h4>
+                        <ol>
+                            <li>对非数值，转换为数值在进行比较。布尔值视为0或1；任何值和NaN比较都为false</li>
+                            <li>如果两边都是字符串, 则会将其转化为Unicode编码进行比较,
+                                依次按位比较(英文排序)。所以比较两个数字字符串时，一定要转型。</li>
+                            <li>UTF-8编码在网页中用&#，但要跟十进制。</li>
+                            <li>类型：
+                                <ul>
+                                    <li>&gt;</li>
+                                    <li>&gt;=</li>
+                                    <li>&lt;</li>
+                                    <li>&lt;=</li>
+                                    <li>== 注意：NaN不和任何值相等，用isNaN()函数判断是否为NaN；undefined == null --> true；</li>
+                                    <li>!=</li>
+                                    <li>=== 类似于==，但类型不同直接返回false; undefined === null --> false；</li>
+                                    <li>!== 类似于!=，但类型不同直接返回true</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="ex" id="log03"></div>
+                    </li>
+                    <li>
+                        <h4>分割运算符</h4>
+                        <ol>
+                            <li>同时声明多个变量，如var a=1, b, c;</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>
+                            三元运算符: 条件表达式？语句一：语句二；
+                        </h4>
+                        <ol>
+                            <li>条件结果为true，执行语句一</li>
+                            <li>条件结果为false，执行语句二</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>运算符优先级</h4>
+                        <p>先乘除后加减，相同优先级从左向右</p>
+                        <ol>
+                            <p>优先级表：</p>
+                            <li>. [] new</li>
+                            <li>()</li>
+                            <li>++ --</li>
+                            <li>! ~ + -(单目) typeof void delete</li>
+                            <li>% * /</li>
+                            <li>+ -</li>
+                            <li>&gt;&gt; &lt;&lt;</li>
+                            <li>&gt; &gt;= &lt; &lt;=</li>
+                            <li>== === !==</li>
+                            <li>&</li>
+                            <li>^</li>
+                            <li>|</li>
+                            <li>&&</li>
+                            <li>||</li>
+                            <li>?:</li>
+                            <li>= += -= += /= %= &= ^= |= &gt;&gt;= &lt;&lt;= &gt;&gt;&gt;=</li>
+                            <li>,</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        var a = 1;
+        var b = -a;
+        a++;
+        var c = 1;
+        var d = c++;
+        var boolTrue = true;
+        var re_1 = 1 && 2;
+        var re_2 = 0 && 2;
+        var re_3 = 1 && 0;
+        var re_4 = NaN && 0;
+        var test = "abc";
+        printLog("log01");
+        console.log("a=1; b=-a 则 b=", b);
+        console.log("a=true; b=-a 则 b=", -true);
+        console.log("a=1; a++; 则a=", a);
+        console.log("var c = 1; var d = c++;");
+        console.log("--> c=", c, "d=", d);
+        printLog("log02");
+        console.log("!boolTrue = ", !boolTrue);
+        console.log("a=1, !!a = ", !!a);
+        console.log("&&与运算，第一个值为true，返回第二个值，第一个值为false，返回第一个值：")
+        console.log("result = 1 && 2 --> ", re_1, "返回后边的");
+        console.log("result = 0 && 2 --> ", re_2, "返回false原值");
+        console.log("result = 1 && 0 --> ", re_3, "返回false原值");
+        console.log("result = NaN && 0 --> ", re_4, "返回前面的");
+        console.log("||与运算，第一个值为true，返回第一个值，第一个值为false，返回第二个值：")
+        printLog("log03");
+        console.log("'a' < 'b' --> ", 'a' < 'b');
+        console.log("'11' < '2' --> ", '11' < '2');
+        console.log("'11' < +'2' --> ", '11' < +'2');
+        console.log("输出UTF-8编码字符要转义。如\u2620是\\u2620");
+        console.log("isNaN('abc') --> ", isNaN(test));
+    </script>
+</body>
+
+</html>

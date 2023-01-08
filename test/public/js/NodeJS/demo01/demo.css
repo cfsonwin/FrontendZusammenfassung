@@ -1,0 +1,27 @@
+
+        .ep1{
+            width: 50px;
+            height: 50px;
+            float: left;
+            border: 2px #60d492 solid;
+            background-color: rgb(203, 66, 66);
+        }
+        .ep2{
+            box-sizing: border-box;
+            border: #bfa 5px solid;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(110, 47, 193);
+            position: relative;
+        }
+        .ep3{
+            float: left;
+            background-color: rgb(52, 50, 160);
+        }
+        .ep4{
+            width: 50px;
+            height: 50px;
+            background-color: rgb(47, 193, 110);
+            position: absolute;
+        }
+    

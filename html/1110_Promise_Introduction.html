@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <style>
+        .ex button {
+            /* display: block; */
+            /* height: 50px; */
+            background-color: rgb(219, 141, 215);
+            color: aliceblue;
+            border: 1px rgb(188, 37, 202) solid;
+            border-radius: 7px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+    <script src="../js/template.js"></script>
+    <title>Promise</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>Promise</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>Introduction</h4>
+                        <ol>
+                            <li>支持异步操作比如fs文件操作, 数据库操作, AJAX以及定时器等等</li>
+                            <li>代替旧的回调函数方案</li>
+                            <li>链式回调, 避免回调地狱</li>
+                            <li>是一个构造函数, 可以用new来进行实例化</li>
+                        </ol>
+                        <div class="ex">
+                            <button id="btn01">抽奖</button>
+                            <p>结果为: <span id="result"></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>Promise</h4>
+                        <ol>
+                            <li><img src="../src/img/promise.PNG" alt=""></li>
+                            <li>实例化的时候传入一个函数</li>
+                            <li>有两个形参resolve reject</li>
+                            <li>都是函数类型的参数, 成功的时候调用resolve, 失败的时候调用reject</li>
+                            <li>调用promise.then()方法传入两个方法, 分别对应成功和失败的时候的回调函数</li>
+                            <li>.then()方法也有返回值, 返回一个promise对象, 返回状态
+                                <ul>
+                                    <li>抛出异常throw的时候返回<span class="red">失败</span></li>
+                                    <li>return 非promise对象: 成功且返回什么result就是什么</li>
+                                    <li>return 一个Promise对象: 返回什么就是什么</li>
+                                </ul>
+                            </li>
+                            <li>任务串联: </li>
+                            <li>resolve() 和 reject()可以传入参数, 在.then()处理结果时接收</li>
+                            <li><span class="red">多次调用.then()方法, 状态改变后都会执行</span></li>
+                            <li>promise.catch(reason=>{clg(reason)})只能指定失败的回调</li>
+                            <li><span class="red">改变状态和执行回调都可能先发生, 一般先改变状态, 
+                                但执行器函数当中是一个异步任务的时候就会先执行回调</span></li>
+                            <li>回调的执行一定在状态改变之后</li>
+                            <li>
+                                promise.resolve()
+                                <ul>
+                                    <li>传入一个非promise对象, 返回成功的结果的promise对象</li>
+                                    <li>传入promise对象, 跟正常一样, 参数的结果决定返回结果成功或者失败</li>
+                                </ul>
+                            </li>
+                            <li>
+                                promise.reject()
+                                <ul>
+                                    <li>返回一个失败的promise对象</li>
+                                    <li>promiseResult可以是一个成功的Promise对象</li>
+                                </ul>
+                            </li>
+                            <li>
+                                promise.all([p1, p2, p3, ...])
+                                <ul>
+                                    <li>传入一个promise的数组, 传入的数组都成功的话, 返回成功结果组成的数组</li>
+                                    <li>有失败的话返回失败的结果</li>
+                                </ul>
+                            </li>
+                            <li>
+                                promise.race([p1, p2, p3, ...])
+                                <ul>
+                                    <li>传入一个promise的数组, 返回第一个返回的promise对象的结果</li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <div class="ex" id="ex2">
+                            <button id="btn02">获取一个小秘密</button>
+                            <div id="code"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <h4>utils.promisify</h4>
+                        <ol>
+                            <li>将回调风格的函数转为promise风格的函数</li>
+                            <li>比如const newReadFile = util.promisify(fs.readFile)
+                                <br>然后就可以newReadFile(fPath).then()
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>状态改变</h4>
+                        <ol>
+                            <li>实例对象的属性promiseState: pending resolved/fulfilled rejected</li>
+                            <li>只能是pending变成resolved或rejected</li>
+                            <li>属性promiseResult保存异步任务成功或者失败的结果[data/err]</li>
+                            <li>调用resolve()函数可以将pending变为fulfilled</li>
+                            <li>调用reject()函数可以将pending变为rejected</li>
+                            <li>使用throw关键字 throw xxx;抛出错误信息</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>问题</h4>
+                        <ol>
+                            <li>异常穿透, 连续调用.then()函数且不处理异常, 最后调用.catch()函数可以处理所有发生的异常</li>
+                            <li>中断Promise链: 返回一个pending状态的Promise对象 return new Promise(()=>{}), 后面的就都不会执行了</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/promise/01.js"></script>
+    <script src="../js/promise/rewritePromise.js"></script>
+    <script src="../js/promise/04.js"></script>
+</body>
+
+</html>

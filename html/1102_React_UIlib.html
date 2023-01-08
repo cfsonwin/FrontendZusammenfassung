@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>1005 React Introduction</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="REACT">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>1005 React UI Library</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>UI组件库</h4>
+                        <ol>
+                            <li><a href="https://mui.com/">material-ui</a></li>
+                            <li><a href="https://ant.design/">ant-design</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>Ant-design</h4>
+                        <ol>
+                            <li>import {} from 'antd'</li>
+                            <li>import 'antd/dist/antd.css'</li>
+                            <li>import {} from '@ant-design/icons'</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>修改默认配置文件</h4>
+                        <ol>
+                            <li>终端中输入 yarn eject 并确认</li>
+                            <li>antd样式按需引入
+                                <ul>
+                                    <li>yarn add @craco/craco</li>
+                                    <li>/* package.json */ <br />
+                                        "scripts": {<br />
+                                        - "start": "react-scripts start",<br />
+                                        - "build": "react-scripts build",<br />
+                                        - "test": "react-scripts test",<br />
+                                        + "start": "craco start",<br />
+                                        + "build": "craco build",<br />
+                                        + "test": "craco test",<br />
+                                        }
+                                    </li>
+                                    <li>Then create a craco.config.js at root directory </li>
+                                </ul>
+                            </li>
+                            <li> 修改antd样式
+                                <ul>
+                                    <li>/* src/App.js */<br />
+                                        - import './App.css';<br />
+                                        + import './App.less';<br />
+                                    </li>
+                                    <li>
+                                        /* src/App.less */<br />
+                                        - @import '~antd/dist/antd.css';<br />
+                                        + @import '~antd/dist/antd.less';<br />
+                                    </li>
+                                    <li>yarn add craco-less</li>
+                                    <li> modify craco.config.js like below:<br />
+                                        const CracoLessPlugin = require('craco-less');<br />
+                                        module.exports = {<br />
+                                        plugins: [<br />
+                                        {<br />
+                                        plugin: CracoLessPlugin,<br />
+                                        options: {<br />
+                                        lessLoaderOptions: {<br />
+                                        lessOptions: {<br />
+                                        modifyVars: { '@primary-color': '#1DA57A' },<br />
+                                        javascriptEnabled: true,<br />
+                                        },<br />
+                                        },<br />
+                                        },<br />
+                                        },<br />
+                                        ],<br />
+                                        };<br />
+                                    </li>
+                                    <li>By adding modifyVars option of less-loader here, we should see a green button rendered on the page after rebooting the server now.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -129,9 +129,9 @@
         )
         var btn = document.getElementById("axios").getElementsByTagName("button");
         //base url
-        axios.defaults.baseURL = "http://127.0.0.1:8000"
+        axios.defaults.baseURL = "http://127.0.0.1:5501"
         btn[0].onclick = function(){
-            axios.get("/server-json", {
+            axios.get("/package.json", {
                 //url parameter
                 params: {id:100},
                 //Header

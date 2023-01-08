@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="stylesheet" href="../src/fa/css/all.css">
+    <script src="../js/template.js"></script>
+    <title>1005 React Introduction</title>
+</head>
+
+<body>
+    <header class="top-bar w">
+        <div class="dropdown">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="brand">
+            <div class="brand-cube">好好学习</div>
+            <div class="brand-cube">找到工作</div>
+            <div class="brand-cube">好搞对象</div>
+            <div class="brand-cube">天天向上</div>
+        </div>
+        <div class="title">
+        </div>
+
+        <button class="selector"><i class="fa-solid fa-caret-down"></i></button>
+
+
+    </header>
+
+    <div class="wapper w">
+        <nav class="side-nav">
+            <div class="side-nav-title">Topics</div>
+            <div class="topics" id="REACT">
+            </div>
+        </nav>
+        <div class="main-body">
+            <h1>1005 React Introduction</h1>
+            <a class="backHomepage" href="./index.html">
+                <i class="fa-solid fa-caret-left"></i>
+                Back Homepage
+            </a>
+            <div class="block">
+                <ul class="l-1">
+                    <li>
+                        <h4>路由</h4>
+                        <ol>
+                            <li>分为导航栏以及内容区</li>
+                            <li>导航区的a标签使用Link标签, 添加to属性指向对应url</li>
+                            <li>展示的内容区使用Route标签进行路由匹配, path对应url, component对应展示的组件</li>
+                            <li>APP外面包裹一个BrowserRouter或者HashRouter</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>路由组件与一般组件</h4>
+                        <ol>
+                            <li>路由组件在Route标签中通过component属性调用</li>
+                            <li>路由组件一般放在pages文件夹当中</li>
+                            <li>路由组件接收三个固定属性: history location match</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>NavLink组件 Switch组件</h4>
+                        <ol>
+                            <li>通过activeClassName属性指定样式</li>
+                            <li>封装组件时, 可以通过this.props.children获取标签体内容</li>
+                            <li>Route组件外包含Switch标签, 实现首次匹配规则, 否则同时展现符合匹配路由的所有组件</li>
+                            <li>样式丢失问题: 如果请求的资源不存在, 会默认返回public/index.html
+                                <ul>
+                                    <li>如果有二级路由, index.html中引入的外部资源路径是"./xxxx", 会引起样式丢失</li>
+                                    <li>不用"./", 直接用"/"</li>
+                                    <li>使用"%PUBLIC_URL%"</li>
+                                    <li>使用HashRoute</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>模糊匹配</h4>
+                        <ol>
+                            <li>默认模糊匹配</li>
+                            <li>路由注册的时候的to属性指向的路径包含Route组件path属性查找的路径即可</li>
+                            <li>Route组件中添加exact={true}即开启, 不要随意开启, 导致嵌套路由失效</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>重定向</h4>
+                        <ol>
+                            <li>Redirect组件</li>
+                            <li>一般写到所有路由的最下方</li>
+                            <li>路径找不到匹配项时, 跳转到Redirect组件中to指向的url</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>嵌套路由</h4>
+                        <ol>
+                            <li>发送请求后按照注册路由的顺序, 依次渲染组件</li>
+                            <li>组册子路由的时候要带上父路由的path</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>路由传参</h4>
+                        <ol>
+                            <li>向路由组件params传递参数: Link中正常传递变量, Route的path中':' + 'key'接收, 从this.props.match.params中接收Object</li>
+                            <li>search参数: Link中'?' + '传入数据', Route正常接收, this.props.location.search中接受, 直接接收字符串并处理
+                                <ul>
+                                    <li>"key=value&key=value..."形式的字符串叫做urlencoded形式</li>
+                                    <li>使用querystring库的.stringify()方法把对象转成urlencoded格式的String</li>
+                                    <li>.parse()方法把字符串转成对象</li>
+                                </ul>
+                            </li>
+                            <li>
+                                state参数
+                                <ul>
+                                    <li>想to传递对象, to = {{ pathname:"xxx", state:{Obj} }}</li>
+                                    <li>this.props.location.state中接收对象</li>
+                                    <li>地址栏不变, pathname对应的是父路由, 并把传的东西记录在history里</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li> 
+                        <h4>push和replace</h4>
+                        <ol>
+                            <li>历史记录默认是push模式, 每次跳转链接会把新的地址放到栈顶并读取地址</li>
+                            <li>Link中设置replace={true}改成replace模式, 跳转链接不会把新的地址放到栈顶</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>编程式路由导航</h4>
+                        <ol>
+                            <li>使用history对象的.replace(path, state)和.push(path, state)方法</li>
+                            <li>可以用来配合事件触发页面跳转</li>
+                            <li>history上的.goBack() .goForward()方法实现页面前进后退</li>
+                            <li>.go()方法传递数值, 前进或后退多少步</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>withRouter</h4>
+                        <ol>
+                            <li>一般组件不会像路由组件一样接受history等参数</li>
+                            <li>在使用export暴露组件时 export default withRouter(组件)</li>
+                            <li>返回一个跟路由组件一样的api</li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4>BrowserRouter && HashRouter</h4>
+                        <ol>
+                            <li>BR使用的是H5提出的history API, HR使用的是url的hash值, 井号后面的内容不会发送给服务器</li>
+                            <li>HR会对location.state参数产生影响, 丢失！！！</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
